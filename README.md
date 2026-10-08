@@ -18,7 +18,9 @@ and unweighted events are written in Les Houches format.
   hadron colliders*, [arXiv:1007.0075](https://arxiv.org/abs/1007.0075), JHEP 09 (2010) 034;
   erratum JHEP 06 (2016) 037.
   This paper extended them to fully differential distributions with top decays. This repository
-  contains its code.
+  contains its code. The code distributed with the paper (formerly at
+  http://yokoya.web.cern.ch/yokoya/TopBS/) is kept unchanged in the release
+  [paper-2010-distribution](https://github.com/hiroshiyokoya/toponium-event-generator/releases/tag/paper-2010-distribution).
 
 The paper generated events in two ways: with BASES/SPRING, and with MadEvent 4.4.42 (its Sec. 3).
 The repository has both:
@@ -26,7 +28,7 @@ The repository has both:
 - **MadEvent style (2010)**, `legacy/paper-2010/`. These are the MadGraph/MadEvent v4.4.42 process
   directories of the paper, with the Green-function modification. They run like any MadEvent
   process (`run_card.dat`, `param_card.dat`, LHE + banner), so this is the natural choice for
-  experimental studies. Final states: `blvblv`, `blvbjj`.
+  experimental studies. Final states: `bwbw`, `blvblv`, `blvbjj`.
 - **Stand-alone (BASES/SPRING)**, `standalone/`. This is a Fortran program with BASES/SPRING and
   MadGraph II/HELAS matrix elements. The BASES/SPRING-based code predates the paper. The
   repository holds it as of 2015, which has more final states (`bwbw`, `bwblv`, `blvblv`,
@@ -51,6 +53,7 @@ The repository has both:
 |---|---|
 | `legacy/paper-2010/ppblvblv_Grn_v42/` | MadEvent 4.4.42 process `pp -> b mu+ vm b~ mu- vm~` with the Green-function modification (`GrnFnc_blvblv/`) |
 | `legacy/paper-2010/ppblvbjj_Grn_v42/` | the same for `pp -> b l nu b~ j j` (`GrnFnc_blvbjj/`) |
+| `legacy/paper-2010/ppbwbw_Grn_v42/` | the same for `pp -> b W+ b~ W-` (`GrnFnc_bwbw/`) |
 | `legacy/paper-2010/GrnEP_pro/` | programs that compute the Green-function tables `grnep{1,8}{thre,high}.tbl` |
 | `standalone/common/` | sources shared by all final states of the stand-alone version |
 | `standalone/<proc>/` | final-state specific sources: `bwbw`, `bwblv`, `blvblv`, `blvbjj`, `bjjbjj` |
@@ -69,7 +72,9 @@ The repository has both:
 | `REFERENCES.md`, `THIRD_PARTY.md` | papers to cite; licences of third-party code and data |
 
 The 2010 sources were restored from the original tarballs, with symbolic links replaced by real
-files. Run products (`Events/`, `build/`, `results/`, object files) are git-ignored.
+files. The tarballs themselves, as distributed with the paper, are kept unchanged in the release
+[paper-2010-distribution](https://github.com/hiroshiyokoya/toponium-event-generator/releases/tag/paper-2010-distribution).
+Run products (`Events/`, `build/`, `results/`, object files) are git-ignored.
 
 ## Quick start (Docker)
 
@@ -108,7 +113,7 @@ and grids, and how the generators read and apply them are described in
 ```bash
 docker run --rm -v "$PWD:/work" toponium-eg:dev \
   scripts/run_paper2010.sh blvblv 1 1 1 1 500 4 test11
-# args: <blvblv|blvbjj> IGRN INR ITR IKF [nevents] [ncores] [tag]
+# args: <bwbw|blvblv|blvbjj> IGRN INR ITR IKF [nevents] [ncores] [tag]
 ```
 
 The script copies the process directory into the container, writes the switches into

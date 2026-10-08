@@ -1,0 +1,16 @@
+	INTEGER IGRN,ITR,INR,IKF
+	PARAMETER (IGRN=1, INR=1, ITR=1, IKF=1)
+C...... IGRN .........................................
+C	 0: No Coulomb correction,
+C	 1: Overall correction prescription,
+C	 2: Total angular momentum prescription
+C......	INR ..........................................
+C	 0: No non-factorizable diagrams
+C	 1: Fixed Width Scheme
+C......	ITR ..........................................
+C	 0: Naive diagramatical separation 
+C	 1: Remove PS suppression in resonant amplitude
+C......	IKF ..........................................
+C	 0: LO prediction for ISR
+C	 1: Normalize to NLO prediction for each subprocess 
+C.....................................................

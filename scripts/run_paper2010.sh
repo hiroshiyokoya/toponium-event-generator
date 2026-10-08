@@ -1,21 +1,22 @@
 #!/bin/bash
-# Run the 2010 MadEvent process (pp -> b mu+ nu b~ mu- nu~ / b l nu b j j)
+# Run the 2010 MadEvent process (pp -> b W+ b~ W- / b mu+ nu b~ mu- nu~ / b l nu b j j)
 # with the Green-function (bound-state) modification, inside the Docker image.
 #
 # usage (inside the container, repo mounted at /work):
-#   scripts/run_paper2010.sh <blvblv|blvbjj> <igrn> <inr> <itr> <ikf> [nevents] [ncores] [tag]
+#   scripts/run_paper2010.sh <bwbw|blvblv|blvbjj> <igrn> <inr> <itr> <ikf> [nevents] [ncores] [tag]
 #     thr.inc switches: IGRN INR ITR IKF  (see GrnFnc_*/thr11.inc), e.g. 1 1 1 1
 #     igrn=0 inr=0 is the conventional (no Coulomb/non-resonant) set-up.
 # The process directory is copied to $WORKDIR (container-local, default /tmp/tbs)
 # because MadEvent relies on symbolic links; Events/ summaries are copied to
 # /work/results/<proc>_<tag>/ (git-ignored).
 set -euo pipefail
-PROC=${1:?blvblv|blvbjj}; IGRN=${2:?}; INR=${3:?}; ITR=${4:?}; IKF=${5:?}
+PROC=${1:?bwbw|blvblv|blvbjj}; IGRN=${2:?}; INR=${3:?}; ITR=${4:?}; IKF=${5:?}
 NEV=${6:-1000}; NCORE=${7:-$(nproc)}; TAG=${8:-g${IGRN}n${INR}t${ITR}k${IKF}}
 REPO=${REPO:-/work}
 WORKDIR=${WORKDIR:-/tmp/tbs}
 SRC=$REPO/legacy/paper-2010/ppblvblv_Grn_v42; GRN=GrnFnc_blvblv
 if [ "$PROC" = blvbjj ]; then SRC=$REPO/legacy/paper-2010/ppblvbjj_Grn_v42; GRN=GrnFnc_blvbjj; fi
+if [ "$PROC" = bwbw ]; then SRC=$REPO/legacy/paper-2010/ppbwbw_Grn_v42; GRN=GrnFnc_bwbw; fi
 rm -rf "$WORKDIR"; mkdir -p "$WORKDIR"; cp -r "$SRC" "$WORKDIR/proc"; cd "$WORKDIR/proc"
 export FFLAGS_LEGACY="${FFLAGS_LEGACY:--std=legacy -fallow-argument-mismatch -ffixed-line-length-132 -O}"
 # MadEvent makefiles use $(FFLAGS) set inside; patch them for gfortran
