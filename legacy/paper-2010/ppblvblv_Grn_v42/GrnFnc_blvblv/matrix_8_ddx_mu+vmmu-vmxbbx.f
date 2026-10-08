@@ -109,7 +109,10 @@ C ----------
       write(hel_buff,'(16i5)') (0,i=1,nexternal)
       IF (ISUM_HEL .EQ. 0 .OR. NTRY .LT. 10) THEN
           DO IHEL=1,NCOMB
-             IF (GOODHEL(IHEL,IPROC) .OR. NTRY .LT. 2) THEN
+C            Always sum all helicities (2026, issue #9): with ITR=1, CORR
+C            vanishes where a top virtuality is below m_W+m_b, so a zero
+C            at the first point does not mean a vanishing helicity.
+             IF (.TRUE.) THEN
                  T=MATRIX(P ,NHEL(1,IHEL),JC(1))            
                DO JJ=1,nincoming
                  IF(POL(JJ).NE.1d0.AND.

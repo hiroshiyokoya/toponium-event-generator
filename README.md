@@ -29,9 +29,12 @@ The repository has two versions of the generator:
 > - Both versions build and run in Docker (gfortran 13). All final states produce events.
 > - With BASES/SPRING V5.1 from the CPC Program Library, the stand-alone results are
 >   bit-for-bit identical to those of the 2015 setup.
-> - **Open:** for the same settings, the two versions differ by about 10% in the `blvblv`
->   cross section (#9). Without the threshold correction and K factors the difference is about
->   4%. Until this is understood, treat absolute normalisations with care.
+> - The two versions were cross-checked (#9). Their matrix elements agree point by point.
+>   Without the threshold correction their cross sections agree to 0.4%; with it and
+>   `ITR=0`, the singlet channel agrees to 0.6%. Two bugs of the 2010 code were fixed: a missing ū u subprocess for
+>   `INR=0`, and lost jobs for `ITR=1 INR=0`. See
+>   [docs/versions-2010-2015.md](docs/versions-2010-2015.md).
+> - **Open:** with `ITR=1`, MadEvent is still about 3% above BASES (#11).
 > - The numbers of arXiv:1007.0075 have not been reproduced yet.
 
 ## Repository layout
