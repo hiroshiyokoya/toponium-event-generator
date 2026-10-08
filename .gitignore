@@ -1,9 +1,27 @@
+# build / run products
 build/
+results/
+_claude/
 *.o
+*.a
 *.so
 *.mod
 fort.*
 *.root
 *.ntup
 __pycache__/
-/_claude/
+# MadEvent process-directory run products (legacy/*)
+legacy/**/Events/*
+!legacy/**/Events/banner_header.txt
+legacy/**/HTML/
+legacy/**/myprocid
+legacy/**/done
+legacy/**/SubProcesses/P*/G*/
+legacy/**/SubProcesses/P*/madevent
+legacy/**/SubProcesses/P*/gensym
+legacy/**/SubProcesses/P*/symfact
+legacy/**/SubProcesses/P*/ajob*
+legacy/**/SubProcesses/P*/results.dat
+legacy/**/SubProcesses/P*/*.log
+# bulk data copied from backup (not tracked)
+data/

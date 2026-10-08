@@ -1,0 +1,64 @@
+
+Fortran codes for calculation of the Green fnc in momentum-space
+
+--------------
+
+It solves the Schrodinger equation in coordinate-space by Runge-Kutta
+method, then takes Fourier transform by Simpthon integration method.
+The Green fnc. in momentum space is a function of the energy
+and the absolute value of the momentum, G(E,p).
+
+The GrnEP{thre,high}.f codes compute the Green fnc. and make tables, 
+for the threshold and high-energy region, separately.
+Note the grid of the table for threshold and high-energy is different.
+
+1) GrnEPthre.f : main program for the threshold region.
+2) GrnEPhigh.f : main program for the high-energy region.
+
+These read
+3,4,5) tblgrnep.inc, incgrnep.inc, filedata.inc
+as COMMON settings.
+
+The QCD potential is calculated in 
+6) Vqcd.f
+We prepared three kind of the QCD potential; 
+6a) Vqcd_1LFO.f  : One-Loop Fixed-Order QCD potential
+6b) Vqcd_2LFO.f  : Two-Loop Fixed-Order QCD potential
+6c) Vqcd_2LRGI.f : Two-Loop RG-improved QCD potential
+You can choose from the above by symbolically linking the file.
+
+The computed Green fnc. is tabulated in "grnep1thre.tbl" and
+ "grnep1high.tbl" for color-singlet and "grnep8thre.tbl" and
+ "grnep8high.tbl" for color-octet.
+It takes several hours for each program to make the table.
+Some logs in the calculation are stored in "fort.*".
+For users conveninece, the imaginary part of the coordnate-space Green fnc.
+at the origin, Im{G}(E,r=0), are stored
+in "fort.31" to "fort.34".
+
+The tables can be read in by the code below, which perform two dimensional
+linear interpolation.
+
+7) readgrnep.f : code for reading the table.
+8) plotgrnep.f : sample program to read the Grn. fnc. table.
+
+These also require filedata.inc and tblgrnep.inc files.
+
+
+External programs :
+9,10,11) alphas_pegasus.f, asrgkt.f, betafct.f :
+       strong coupling constant calculation code,
+       taken from QCD-PEGASUS by A. Vogt.
+       Comput.Phys.Commun. 170 (2005) 65. <hep-ph/0408244>
+
+12) gamt.f : calculate top-quark decay-width at tree-level
+       from input parameters (MT,GF,MW,MB,VTB).
+
+
+Makefile  :
+13) Makefile : add $(ALPHAS) or $(GAMT), if you use external programs.
+
+
+--------------------
+Hiroshi Yokoya  <hiroshi.yokoya@cern.ch>, <hyokoya@gmail.com>
+2010.06.21
