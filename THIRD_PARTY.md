@@ -16,6 +16,8 @@ licence. Status as of 2026-10-08:
 | `Source/DHELAS/` | HELAS (H. Murayama, I. Watanabe, K. Hagiwara, KEK-91-11), extended by the MG team | No explicit licence. Distributed with every MadGraph release. |
 | `Source/CERNLIB/` (`abend.f`, `dlsqp2.f`, `lenocc.f`, `mtlprt.f`, `mtlset.f`, `radmul.f`) | CERN Program Library, as bundled by MadGraph | CERNLIB is distributed under the GNU GPL. These files stay under the GPL. |
 | `Source/PDF/` (`Ctq*.f`, `cteq3.f`, `Partonx5.f`, `jeppe02.f`, ...), `lib/Pdfdata/` (`cteq*.tbl`, `mrs*.dat`, `mrst2002nlo.dat`) | CTEQ and MRST parton distribution codes and grids, as bundled by MadGraph | Publicly distributed by the PDF groups, also via LHAPDF. No explicit licence. Please cite the PDF papers. |
+| `Source/MadWeight_File/Python/*.py` (13 files: `accep.py`, `Cards.py`, `clean.py`, `cluster.py`, ...) | MadWeight (matrix-element reweighting tool bundled with MG/ME v4; not used by this generator) | Header says "license: GNU" (GNU GPL, version not stated). These files stay under the GPL. |
+| `Source/MadWeight_File/Python/progressbar.py` | Python progress-bar module bundled with MadWeight | GNU LGPL, version 2.1 or later (stated in the file). |
 
 ## Not shipped: BASES/SPRING
 
