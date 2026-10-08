@@ -61,6 +61,8 @@ The repository has both:
 | `scripts/extract_bases51.sh` | extracts the BASES/SPRING V5.1 library from the CPC deck you downloaded |
 | `scripts/lhe_masswindow.py` | fractions of LHE events inside resonance mass windows (cross-checks) |
 | `docs/versions-2010-2015.md` | how the two versions relate: switches, inputs, outputs, cross-checks |
+| `docs/REVIEW.md` | code review (2026-10): known issues and proposed fixes, mainly the Green-function tables |
+| `scripts/check/` | checks used for the cross-checks and the review (LO $t\bar t$, matrix elements, tables) |
 | `docs/green-function-tables.md` | Green-function tables: how to make them, format, how the generators use them |
 | `docs/madgraph-status.md` | current status of MG5_aMC and MadGraph7 |
 | `docker/Dockerfile` | toolchain image: gfortran (also as `f77`), LHAPDF 6.5.5 + CTEQ6L1 |
