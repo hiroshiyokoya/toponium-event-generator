@@ -1,0 +1,33 @@
+C...  One-Loop Fixed-Order QCD potential
+      DOUBLE PRECISION FUNCTION VQCD (R)
+      IMPLICIT NONE
+      DOUBLE PRECISION R
+      DOUBLE PRECISION MUB,ASB
+      COMMON/GrnPOT/MUB,ASB
+      DOUBLE PRECISION MU,GAMT,E
+      COMMON/GrnPAR/MU,GAMT,E
+      INTEGER NF
+      PARAMETER (NF=5)
+      DOUBLE PRECISION PI,SQ2,EGAM, C,CF,CA
+      PARAMETER (PI=3.141593D0,SQ2=1.41421356D0,EGAM=0.577216D0,
+     -     CF=1.33333333D0,CA=3D0)
+      DOUBLE PRECISION A1,B0
+      INTEGER ICLR
+      COMMON/GrnCOL/ICLR
+      DOUBLE PRECISION VH,GF,MH
+      PARAMETER (GF=1.16637D-5,MH=120D0)
+      B0 = 11D0/3D0*CA-2D0/3D0*NF
+      A1 = 31D0/9D0*CA-10D0/9D0*NF
+      IF (ICLR.EQ.1) THEN
+         C = -CF                ! Singlet
+      ELSEIF (ICLR.EQ.2) THEN
+         C = 1D0/6D0            ! Octet
+      ELSE
+         STOP
+      ENDIF
+      VQCD = C * ASB/R
+     -     * (1D0 + ASB/(4D0*PI)*(2D0*B0*(DLOG(MUB*R) + EGAM) + A1))
+*     VH = -GF*MU**2/2D0/SQ2/PI * DEXP(-MH*R) / R
+*     VQCD = VQCD + VH
+      RETURN
+      END

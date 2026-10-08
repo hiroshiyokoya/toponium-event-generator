@@ -1,0 +1,4412 @@
+>>sm<< 
+Model sm found  in ../Models 
+Started Thu Jun 17 07:23:38 JST 2010
+ Got it 2particles_0001_v1.dat                                                 
+ Added loop options for p 56
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for j 57
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for l+ 58
+ Looping over  2 particles
+e+ mu+   
+ Added loop options for l- 59
+ Looping over  2 particles
+e- mu-   
+ Added loop options for vl 60
+ Looping over  2 particles
+ve vm   
+ Added loop options for vl~ 61
+ Looping over  2 particles
+ve~ vm~   
+ Particles read from file.
+ Reading interactions from file
+ Adding new coupling QCD  1
+ Adding new coupling QED  2
+  
+  
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process (w+>mu+vm)(w->du~)bb~ @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: g g -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 1
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  39 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Writing Feynman graphs in file matrix.ps
+ Error zero line length t    
+ Error zero line length t    
+ Reduced color matrix 3 39
+ Writing function MATRIX in file matrix.f.
+ isym before:  1
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ isym after:  1
+ buff = 
+ g g -> (w+>mu+vm)(w->du~)bb~                                                                                            
+Wrote process: 
+g g -> (w+>mu+vm)(w->du~)bb~  @ 1_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process (w+>mu+vm)(w->du~)bb~ @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u~ u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 2
+   53    2    7   54   31   42   18   19
+ buff = 
+ u~ u~ -> (w+>mu+vm)(w->du~)bb~                                                                                          
+Wrote process: 
+u~ u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u~ u -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 3
+   53    2    7   54   31   42   18   19
+ buff = 
+ u~ u -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u~ u -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u~ c -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 4
+   53    2    7   54   31   42   18   19
+ buff = 
+ u~ c -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u~ c -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u~ d -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 5
+   53    2    7   54   31   42   18   19
+ buff = 
+ u~ d -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u~ d -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u~ s -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 6
+   53    2    7   54   31   42   18   19
+ buff = 
+ u~ s -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u~ s -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u u~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 7
+   53    2    7   54   31   42   18   19
+ buff = 
+ u u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u c~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 8
+   53    2    7   54   31   42   18   19
+ buff = 
+ u c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u d~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 9
+   53    2    7   54   31   42   18   19
+ buff = 
+ u d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: u s~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 10
+   53    2    7   54   31   42   18   19
+ buff = 
+ u s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c~ u -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 11
+   53    2    7   54   31   42   18   19
+ buff = 
+ c~ u -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c~ u -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c~ c -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 12
+   53    2    7   54   31   42   18   19
+ buff = 
+ c~ c -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c~ c -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c~ d -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 13
+   53    2    7   54   31   42   18   19
+ buff = 
+ c~ d -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c~ d -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c~ s -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 14
+   53    2    7   54   31   42   18   19
+ buff = 
+ c~ s -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c~ s -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c u~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 15
+   53    2    7   54   31   42   18   19
+ buff = 
+ c u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c c~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 16
+   53    2    7   54   31   42   18   19
+ buff = 
+ c c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c d~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 17
+   53    2    7   54   31   42   18   19
+ buff = 
+ c d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: c s~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 18
+   53    2    7   54   31   42   18   19
+ buff = 
+ c s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d~ u -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 19
+   53    2    7   54   31   42   18   19
+ buff = 
+ d~ u -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d~ u -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d~ c -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 20
+   53    2    7   54   31   42   18   19
+ buff = 
+ d~ c -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d~ c -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d~ d -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 21
+   53    2    7   54   31   42   18   19
+ buff = 
+ d~ d -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d~ d -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d~ s -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 22
+   53    2    7   54   31   42   18   19
+ buff = 
+ d~ s -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d~ s -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d u~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 23
+   53    2    7   54   31   42   18   19
+ buff = 
+ d u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d c~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 24
+   53    2    7   54   31   42   18   19
+ buff = 
+ d c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d d~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 25
+   53    2    7   54   31   42   18   19
+ buff = 
+ d d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: d s~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 26
+   53    2    7   54   31   42   18   19
+ buff = 
+ d s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s~ u -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 27
+   53    2    7   54   31   42   18   19
+ buff = 
+ s~ u -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s~ u -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s~ c -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 28
+   53    2    7   54   31   42   18   19
+ buff = 
+ s~ c -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s~ c -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s~ d -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 29
+   53    2    7   54   31   42   18   19
+ buff = 
+ s~ d -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s~ d -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s~ s -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 30
+   53    2    7   54   31   42   18   19
+ buff = 
+ s~ s -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s~ s -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s u~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 31
+   53    2    7   54   31   42   18   19
+ buff = 
+ s u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s c~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 32
+   53    2    7   54   31   42   18   19
+ buff = 
+ s c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s d~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 33
+   53    2    7   54   31   42   18   19
+ buff = 
+ s d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: s s~ -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 34
+   53    2    7   54   31   42   18   19
+ buff = 
+ s s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+Attempting Process: g g -> mu+ vm d u~ b b~  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 35
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  39 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ buff = 
+ g g -> (w+>mu+vm)(w->du~)bb~                                                                                            
+Wrote process: 
+g g -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found match 36 35
+   53    2    7   54   31   42   18   19
+    0    0    0    0    0    0    0    0
+
+
+ Thank you for using MadGraph
+
+ Got it 2particles_0001_v1.dat                                                 
+ Added loop options for p 56
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for j 57
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for l+ 58
+ Looping over  2 particles
+e+ mu+   
+ Added loop options for l- 59
+ Looping over  2 particles
+e- mu-   
+ Added loop options for vl 60
+ Looping over  2 particles
+ve vm   
+ Added loop options for vl~ 61
+ Looping over  2 particles
+ve~ vm~   
+ Particles read from file.
+ Reading interactions from file
+ Adding new coupling QCD  1
+ Adding new coupling QED  2
+  
+  
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u~ u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 1
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u~ u -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 2
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Writing Feynman graphs in file matrix.ps
+ Reduced color matrix 1 16
+ Writing function MATRIX in file matrix.f.
+ isym before:  1
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ isym after:  1
+ buff = 
+ u~ u -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u~ u -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u~ c -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 3
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u~ d -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 4
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u~ s -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 5
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 6
+   53    2    7   54   31   42   18   19
+ buff = 
+ u u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 7
+   53    2    7   54   31   42   18   19
+ buff = 
+ u c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 8
+   53    2    7   54   31   42   18   19
+ buff = 
+ u d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 9
+   53    2    7   54   31   42   18   19
+ buff = 
+ u s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c~ u -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 10
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c~ c -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 11
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found Match 1 1
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c~ d -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 12
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c~ s -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 13
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 14
+   53    2    7   54   31   42   18   19
+ buff = 
+ c u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 15
+   53    2    7   54   31   42   18   19
+ buff = 
+ c c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 16
+   53    2    7   54   31   42   18   19
+ buff = 
+ c d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 17
+   53    2    7   54   31   42   18   19
+ buff = 
+ c s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+c s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d~ u -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 18
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d~ c -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 19
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d~ d -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 20
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  1 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ buff = 
+ d~ d -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d~ d -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d~ s -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 21
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 22
+   53    2    7   54   31   42   18   19
+ buff = 
+ d u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 23
+   53    2    7   54   31   42   18   19
+ buff = 
+ d c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 24
+   53    2    7   54   31   42   18   19
+ buff = 
+ d d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 25
+   53    2    7   54   31   42   18   19
+ buff = 
+ d s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s~ u -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 26
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s~ c -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 27
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s~ d -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 28
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s~ s -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 29
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  1 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found Match 2 2
+ buff = 
+ s~ s -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s~ s -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 30
+   53    2    7   54   31   42   18   19
+ buff = 
+ s u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 31
+   53    2    7   54   31   42   18   19
+ buff = 
+ s c~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s c~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 32
+   53    2    7   54   31   42   18   19
+ buff = 
+ s d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 33
+   53    2    7   54   31   42   18   19
+ buff = 
+ s s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: g g -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 34
+   53    2    7   54   31   42   18   19
+ buff = 
+ g g -> (w+>mu+vm)(w->du~)bb~                                                                                            
+Wrote process: 
+g g -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found match 35 34
+   53    2    7   54   31   42   18   19
+    0    0    0    0    0    0    0    0
+
+
+ Thank you for using MadGraph
+
+ Got it 2particles_0001_v1.dat                                                 
+ Added loop options for p 56
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for j 57
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for l+ 58
+ Looping over  2 particles
+e+ mu+   
+ Added loop options for l- 59
+ Looping over  2 particles
+e- mu-   
+ Added loop options for vl 60
+ Looping over  2 particles
+ve vm   
+ Added loop options for vl~ 61
+ Looping over  2 particles
+ve~ vm~   
+ Particles read from file.
+ Reading interactions from file
+ Adding new coupling QCD  1
+ Adding new coupling QED  2
+  
+  
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 1
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Writing Feynman graphs in file matrix.ps
+ Reduced color matrix 1 16
+ Writing function MATRIX in file matrix.f.
+ isym before:  1
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ isym after:  1
+ buff = 
+ u u~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+u u~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 2
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 3
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: u s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 4
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 5
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 6
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found Match 1 1
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 7
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: c s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 8
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d~ d -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 9
+   53    2    7   54   31   42   18   19
+ buff = 
+ d~ d -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d~ d -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 10
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 11
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 12
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  1 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ buff = 
+ d d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 13
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s~ s -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 14
+   53    2    7   54   31   42   18   19
+ buff = 
+ s~ s -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s~ s -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s u~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 15
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s c~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 16
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 17
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 0
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 18
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  1 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found Match 2 2
+ buff = 
+ s s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: g g -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 19
+   53    2    7   54   31   42   18   19
+ buff = 
+ g g -> (w+>mu+vm)(w->du~)bb~                                                                                            
+Wrote process: 
+g g -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found match 20 19
+   53    2    7   54   31   42   18   19
+    0    0    0    0    0    0    0    0
+
+
+ Thank you for using MadGraph
+
+ Got it 2particles_0001_v1.dat                                                 
+ Added loop options for p 56
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for j 57
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for l+ 58
+ Looping over  2 particles
+e+ mu+   
+ Added loop options for l- 59
+ Looping over  2 particles
+e- mu-   
+ Added loop options for vl 60
+ Looping over  2 particles
+ve vm   
+ Added loop options for vl~ 61
+ Looping over  2 particles
+ve~ vm~   
+ Particles read from file.
+ Reading interactions from file
+ Adding new coupling QCD  1
+ Adding new coupling QED  2
+  
+  
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d~ d -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 1
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Writing Feynman graphs in file matrix.ps
+ Reduced color matrix 1 16
+ Writing function MATRIX in file matrix.f.
+ isym before:  1
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ isym after:  1
+ buff = 
+ d~ d -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d~ d -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 2
+   53    2    7   54   31   42   18   19
+ buff = 
+ d d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s~ s -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 3
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found Match 1 1
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 4
+   53    2    7   54   31   42   18   19
+ buff = 
+ s s~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+s s~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: g g -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 5
+   53    2    7   54   31   42   18   19
+ buff = 
+ g g -> (w+>mu+vm)(w->du~)bb~                                                                                            
+Wrote process: 
+g g -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found match 6 5
+   53    2    7   54   31   42   18   19
+    0    0    0    0    0    0    0    0
+
+
+ Thank you for using MadGraph
+
+ Got it 2particles_0001_v1.dat                                                 
+ Added loop options for p 56
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for j 57
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for l+ 58
+ Looping over  2 particles
+e+ mu+   
+ Added loop options for l- 59
+ Looping over  2 particles
+e- mu-   
+ Added loop options for vl 60
+ Looping over  2 particles
+ve vm   
+ Added loop options for vl~ 61
+ Looping over  2 particles
+ve~ vm~   
+ Particles read from file.
+ Reading interactions from file
+ Adding new coupling QCD  1
+ Adding new coupling QED  2
+  
+  
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: d d~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 1
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Writing Feynman graphs in file matrix.ps
+ Reduced color matrix 1 16
+ Writing function MATRIX in file matrix.f.
+ isym before:  1
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ isym after:  1
+ buff = 
+ d d~ -> (w+>mu+vm)(w->du~)bb~                                                                                           
+Wrote process: 
+d d~ -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: s s~ -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 2
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  16 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found Match 1 1
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: g g -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 3
+   53    2    7   54   31   42   18   19
+ buff = 
+ g g -> (w+>mu+vm)(w->du~)bb~                                                                                            
+Wrote process: 
+g g -> (w+>mu+vm)(w->du~)bb~  @ 8_
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found match 4 3
+   53    2    7   54   31   42   18   19
+    0    0    0    0    0    0    0    0
+
+
+ Thank you for using MadGraph
+
+ Got it 2particles_0001_v1.dat                                                 
+ Added loop options for p 56
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for j 57
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for l+ 58
+ Looping over  2 particles
+e+ mu+   
+ Added loop options for l- 59
+ Looping over  2 particles
+e- mu-   
+ Added loop options for vl 60
+ Looping over  2 particles
+ve vm   
+ Added loop options for vl~ 61
+ Looping over  2 particles
+ve~ vm~   
+ Particles read from file.
+ Reading interactions from file
+ Adding new coupling QCD  1
+ Adding new coupling QED  2
+  
+  
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Decay chain process  (w+>mu+vm)(w->du~)bb~  @
+ Part Info after sort:  1 54 10000000 F
+ Part Info after sort:  2 31 10000000 T
+ Part Info after sort:  3 42 10000000 T
+ Part Info after sort:  4 53 20000000 F
+ Part Info after sort:  5 2 20000000 T
+ Part Info after sort:  6 7 20000000 T
+ Part Info after sort:  7 18 0 T
+ Part Info after sort:  8 19 0 T
+ Final part info:  1 54 10000000 F T
+ Final part info:  2 31 10000000 T F
+ Final part info:  3 42 10000000 T T
+ Final part info:  4 53 20000000 F T
+ Final part info:  5 2 20000000 T F
+ Final part info:  6 7 20000000 T T
+ Final part info:  7 18 0 T T
+ Final part info:  8 19 0 T T
+ Attempting Process: g g -> mu+ vm d u~ b b~  
+ Setting particle  2 31 to id  31
+ Setting particle  3 42 to id  42
+ Setting particle  5 2 to id  2
+ Setting particle  6 7 to id  7
+ Setting particle  7 18 to id  18
+ Setting particle  8 19 to id  19
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QCD  =  2
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+ Setting QED  =  4
+Enter maximum number of vertices for eg QCD = 4 (type "end_coup" to finish)
+Enter a name to identify process (matrix): 
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ New Process 1
+   53    2    7   54   31   42   18   19
+  
+Progress    0% finished topology 1 1
+ finished topology 2 1
+ There are  39 graphs.
+  
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Writing Feynman graphs in file matrix.ps
+ Error zero line length t    
+ Error zero line length t    
+ Reduced color matrix 3 39
+ Writing function MATRIX in file matrix.f.
+ isym before:  1
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ isym after:  1
+ buff = 
+ g g -> (w+>mu+vm)(w->du~)bb~                                                                                            
+Wrote process: 
+g g -> (w+>mu+vm)(w->du~)bb~  @ 8_
+
+
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ Part Info after sort:  1 1 54
+ Part Info after sort:  2 2 31
+ Part Info after sort:  3 3 42
+ Part Info after sort:  4 4 53
+ Part Info after sort:  5 5 2
+ Part Info after sort:  6 6 7
+ Part Info after sort:  7 7 18
+ Part Info after sort:  8 8 19
+ Found match 2 1
+   53    2    7   54   31   42   18   19
+    0    0    0    0    0    0    0    0
+
+
+ Thank you for using MadGraph
+
+ Got it 2particles_0001_v1.dat                                                 
+ Added loop options for p 56
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for j 57
+ Looping over  9 particles
+u u~ c c~ d d~ s s~ g   
+ Added loop options for l+ 58
+ Looping over  2 particles
+e+ mu+   
+ Added loop options for l- 59
+ Looping over  2 particles
+e- mu-   
+ Added loop options for vl 60
+ Looping over  2 particles
+ve vm   
+ Added loop options for vl~ 61
+ Looping over  2 particles
+ve~ vm~   
+ Particles read from file.
+ Reading interactions from file
+ Adding new coupling QCD  1
+ Adding new coupling QED  2
+  
+  
+ Standard Model particles include:
+     Quarks:   d u s c b t d~ u~ s~ c~ b~ t~
+     Leptons:  e- mu- ta- e+ mu+ ta+ ve vm vt ve~ vm~ vt~
+     Bosons:   g a z w+ w- h
+  
+ Enter process you would like calculated in the form  e+ e- -> a.
+ ("done" to exit MadGraph.)
+ New Process 1
+
+
+
+ Thank you for using MadGraph
+
+Finished Thu Jun 17 07:34:29 JST 2010 
