@@ -61,6 +61,7 @@ The repository has both:
 | `scripts/extract_bases51.sh` | extracts the BASES/SPRING V5.1 library from the CPC deck you downloaded |
 | `scripts/lhe_masswindow.py` | fractions of LHE events inside resonance mass windows (cross-checks) |
 | `docs/versions-2010-2015.md` | how the two versions relate: switches, inputs, outputs, cross-checks |
+| `docs/green-function-tables.md` | Green-function tables: how to make them, format, how the generators use them |
 | `docs/madgraph-status.md` | current status of MG5_aMC and MadGraph7 |
 | `docker/Dockerfile` | toolchain image: gfortran (also as `f77`), LHAPDF 6.5.5 + CTEQ6L1 |
 | `REFERENCES.md`, `THIRD_PARTY.md` | papers to cite; licences of third-party code and data |
@@ -96,7 +97,9 @@ Both versions use the same switches (details in
 
 The Green-function tables in the repository are for $m_t=173$ GeV, $\Gamma_t=1.4911$ GeV and
 $\alpha_s(\mu_B)=0.1534$. Other parameters need new tables from `legacy/paper-2010/GrnEP_pro/`
-(several hours per table).
+(about 40 minutes for the four tables with gfortran 13). How the tables are made, their format
+and grids, and how the generators read and apply them are described in
+[docs/green-function-tables.md](docs/green-function-tables.md).
 
 ## MadEvent style (2010)
 
