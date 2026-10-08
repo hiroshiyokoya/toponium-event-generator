@@ -10,9 +10,14 @@ states. The correction is applied to the full $pp\to bW^+\bar bW^-$ (+ decays) m
 The fully differential cross section is then correct at LO both near threshold and at high energy,
 and unweighted events are written in Les Houches format.
 
+- K. Hagiwara, Y. Sumino and H. Yokoya, *Bound-state effects on top quark production at hadron
+  colliders*, [arXiv:0804.1014](https://arxiv.org/abs/0804.1014), Phys. Lett. B 666 (2008) 71.
+  This paper introduced the bound-state effects on $t\bar t$ production at hadron colliders, in
+  the $t\bar t$ invariant-mass distribution near threshold.
 - Y. Sumino and H. Yokoya, *Bound-state effects on kinematical distributions of top quarks at
   hadron colliders*, [arXiv:1007.0075](https://arxiv.org/abs/1007.0075), JHEP 09 (2010) 034.
-  This repository contains the code of that paper and its 2015 extension.
+  This paper extended them to fully differential distributions with top decays. This repository
+  contains its code and the 2015 extension.
 
 The repository has two versions of the generator:
 
@@ -153,8 +158,8 @@ CTEQ6 and BASES/SPRING.
 
 [MIT](LICENSE), © 2010–2026 Hiroshi Yokoya. You may use, modify and redistribute the code freely,
 as long as the copyright notice and the licence text are kept. If you use it in a publication,
-please cite arXiv:1007.0075. If you use the stand-alone version, also cite BASES/SPRING, which
-the CPC licence requires.
+please cite arXiv:1007.0075 and arXiv:0804.1014. If you use the stand-alone version, also cite
+BASES/SPRING, which the CPC licence requires.
 
 The MIT licence does not cover the third-party code and data in the MadEvent process directories
 of `legacy/paper-2010/`: MadGraph/MadEvent v4, HELAS, CERNLIB routines (GPL) and PDF tables.

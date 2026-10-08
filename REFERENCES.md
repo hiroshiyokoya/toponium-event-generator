@@ -1,6 +1,9 @@
 # References
 
 ## This work
+- K. Hagiwara, Y. Sumino and H. Yokoya, *Bound-state effects on top quark
+  production at hadron colliders*, Phys. Lett. B 666 (2008) 71,
+  [arXiv:0804.1014](https://arxiv.org/abs/0804.1014).
 - Y. Sumino and H. Yokoya, *Bound-state effects on kinematical distributions of
   top quarks at hadron colliders*, JHEP 09 (2010) 034,
   [arXiv:1007.0075](https://arxiv.org/abs/1007.0075).
