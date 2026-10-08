@@ -17,8 +17,23 @@ licence. Status as of 2026-10-08:
 | `Source/CERNLIB/` (`abend.f`, `dlsqp2.f`, `lenocc.f`, `mtlprt.f`, `mtlset.f`, `radmul.f`) | CERN Program Library, as bundled by MadGraph | CERNLIB is distributed under the GNU GPL. These files stay under the GPL. |
 | `Source/PDF/` (`Ctq*.f`, `cteq3.f`, `Partonx5.f`, `jeppe02.f`, ...), `lib/Pdfdata/` (`cteq*.tbl`, `mrs*.dat`, `mrst2002nlo.dat`) | CTEQ and MRST parton distribution codes and grids, as bundled by MadGraph | Publicly distributed by the PDF groups, also via LHAPDF. No explicit licence. Please cite the PDF papers. |
 
-Not shipped here (to be handled in #5): BASES/SPRING (KEK), used by the 2015
-stand-alone version. Its redistribution terms have not been checked yet.
+## Not shipped: BASES/SPRING
+
+The stand-alone version (`standalone/`) uses BASES/SPRING V5.1 (S. Kawabata,
+Comput. Phys. Commun. 88 (1995) 309). It is distributed by the CPC Program
+Library on Mendeley Data under the **CPC licence**. That licence allows
+academic and non-profit use, requires citing the paper, and does not allow
+passing the code to third parties. It is therefore not included in this
+repository. Users download it themselves and put the zip into `third_party/`.
+`scripts/extract_bases51.sh` extracts it at build time (see README).
+
+`standalone/bases51/bases51_compat.f` was written for this repository and is
+under the MIT licence. It re-implements `BSSETD` and `BSSETP` (KEK V5.0 API),
+`XHSAVE2` (the author's add-on) and the CERNLIB `DATIME`, `UCOPY`, `TIMEX`,
+`TIMEST`. It contains no BASES/SPRING code.
+
+`standalone/common/intvegas.f` is a VEGAS variant (G. P. Lepage), used only
+when `IBSS=0`. Its origin and licence are still to be checked.
 
 If you are an author of any of the above and want a change, please open an
 issue.

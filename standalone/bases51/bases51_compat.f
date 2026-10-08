@@ -1,5 +1,5 @@
 C=======================================================================
-C     Compatibility layer: lets the 2015 TopBS code run with the official
+C     Compatibility layer: lets the 2015 stand-alone code run with the
 C     BASES/SPRING V5.1 of the CPC Program Library (S. Kawabata,
 C     Comput. Phys. Commun. 88 (1995) 309, catalogue AAFW_v2_0).
 C

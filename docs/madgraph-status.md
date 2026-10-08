@@ -1,6 +1,6 @@
 # MadGraph status (surveyed 2026-10-08)
 
-Why this matters: the 2010 TopBS code is a **MadGraph/MadEvent v4.4.42** process
+Why this matters: the 2010 code is a **MadGraph/MadEvent v4.4.42** process
 directory. Experimental users today work with MG5_aMC (or soon MadGraph7), so
 this note records where the MadGraph family stands, to decide how a
 MadEvent-style interface of this generator should evolve.

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build and run a 2015 stand-alone TopBS event generator inside the Docker image.
+# Build and run a 2015 stand-alone event generator inside the Docker image.
 #
 # usage (inside the container, repo mounted at /work):
 #   scripts/run_standalone.sh <bwbw|blvblv|blvbjj|bjjbjj> [tag] [KEY=VALUE ...]

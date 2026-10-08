@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run the 2010 TopBS MadEvent process (pp -> b mu+ nu b~ mu- nu~ / b l nu b j j)
+# Run the 2010 MadEvent process (pp -> b mu+ nu b~ mu- nu~ / b l nu b j j)
 # with the Green-function (bound-state) modification, inside the Docker image.
 #
 # usage (inside the container, repo mounted at /work):

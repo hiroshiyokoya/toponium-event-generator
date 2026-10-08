@@ -109,7 +109,10 @@ C ----------
       write(hel_buff,'(16i5)') (0,i=1,nexternal)
       IF (ISUM_HEL .EQ. 0 .OR. NTRY .LT. 10) THEN
           DO IHEL=1,NCOMB
-             IF (GOODHEL(IHEL,IPROC) .OR. NTRY .LT. 2) THEN
+C            Always sum all helicities (2026, issue #9): with ITR=1, CORR
+C            vanishes where a top virtuality is below m_W+m_b, so a zero
+C            at the first point does not mean a vanishing helicity.
+             IF (.TRUE.) THEN
                  T=MATRIX(P ,NHEL(1,IHEL),JC(1))            
                DO JJ=1,nincoming
                  IF(POL(JJ).NE.1d0.AND.
@@ -330,12 +333,12 @@ C...  Non-Resonant diagram
       CALL JVSXXX(W(1,9   ),W(1,46  ),GWWH ,WMASS   ,WWIDTH  ,W(1,         
      &     47  ))                                                          
       CALL IOVXXX(W(1,6   ),W(1,5   ),W(1,47  ),GWF ,AMP(16  ))            
+C.....
+ 100  CONTINUE
       JAMP(   1) = -AMP(   1)-AMP(   2)-AMP(   3)-AMP(   4)-AMP(   5)
      &             -AMP(   6)-AMP(   7)-AMP(   8)-AMP(   9)-AMP(  10)
      &             -AMP(  11)-AMP(  12)-AMP(  13)-AMP(  14)-AMP(  15)
      &             -AMP(  16)
-C.....
- 100  CONTINUE
       MATRIX = 0.D0 
       DO I = 1, NCOLOR
           ZTEMP = (0.D0,0.D0)
