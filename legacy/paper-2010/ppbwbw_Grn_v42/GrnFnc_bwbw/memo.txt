@@ -1,0 +1,40 @@
+
+GrnFnc_bwbw : Green function modification codes for
+MadEvent "pp>w+w-bb~" process
+
+-----------------------
+
+Description: 
+
+This is a set of Madevent codes for "pp>w+w-bb~" process,
+modified to implement all-order Coulomb corrections between the tt~ pair,
+by using the momentum-space Green's functions.
+The detail description is given in arXiv:1006.7014.
+
+
+Setup:
+
+In this directory, all the modifieded codes are collected. 
+
+Execute "./link.sh" to replace these codes to the original ones. 
+In "thr.inc", you can set parameters to switch whether you include binding
+correction, non-resonant diagrams, and K-factor or not. 
+In "kfac.inc", the normalization constants for each channel is written.
+Be careful, if yu change the scales in "run_card.dat".
+Then generate events by "../bin/generate_events", as usual in MG_ME.
+
+
+Note:
+
+The grid data of the Green functions is obtained for m_t=173 GeV and
+Gamma_t=1.49 GeV.
+The later is consistent with m_b=5 GeV, m_w=80.4 GeV and G_fermi=1.16639E-5.
+It is not recommended to change the above parameters in "param_card.dat"
+without re-calculating the Green functions.
+
+
+If you find bugs or problems, please send me an e-mail.
+
+-----------------------
+Hiroshi Yokoya <Hiroshi.Yokoya@cern.ch>, <hyokoya@gmail.com>
+2010/06/29
