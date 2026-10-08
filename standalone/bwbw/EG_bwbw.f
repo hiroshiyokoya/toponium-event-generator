@@ -68,6 +68,9 @@ C.....
       IDYN  = 0                 ! 0:Fixed scale,1:Dynamical scale
       IKF   = 0                 ! 0:No, 1:Yes
       ICUT  = 0                 ! 0: no cut, 1: knematical cut
+      CALL STEER (IBSS,ISPR,RS,IPART,ICLR,IGRN,ITR,INR,IDYN,IKF,ICUT)  ! optional ./topbs.nml
+      ebeam(1) = rs/2D0
+      ebeam(2) = rs/2D0
       WRITE (50+IBSS,*) "IPART,ICLR,IGRN,ITR,INR,IDYN,IKF,ICUT =",
      -     IPART,ICLR,IGRN,ITR,INR,IDYN,IKF,ICUT
       WRITE (6,*) "IPART,ICLR,IGRN,ITR,INR,IDYN,IKF,ICUT =",
@@ -169,6 +172,8 @@ C
 C
       SUBROUTINE SIGBWBW (RS,IBSS,ISPR,IVAL)
       IMPLICIT NONE
+      INTEGER NEVSTR
+      EXTERNAL NEVSTR
       INTEGER I,IVAL,JVAL
       DOUBLE PRECISION RS,SIG,ERR
       COMMON/BSS/SIG,ERR
@@ -217,7 +222,7 @@ C
       ENDIF
       IF (ISPR.EQ.1) THEN
          CALL LHEOUT (-1)
-         DO I = 1, 1 000 000
+         DO I = 1, NEVSTR(1000000)
             CALL SPRING (INT12,50)
             WRITE (31+IGRN,*) MT1,MT2
             CALL LHEOUT (0)
@@ -254,6 +259,7 @@ C
       ncall = 1 000 000
       itmx1 = 15
       itmx2 = 15
+      call steerb (ncall,itmx1,itmx2)
       acc1  = .1D0
       acc2  = .1D0
       call bssetp (ncall,itmx1,itmx2,acc1,acc2)

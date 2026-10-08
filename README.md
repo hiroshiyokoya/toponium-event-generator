@@ -33,6 +33,9 @@ Fortran 77 sources (`-std=legacy -fallow-argument-mismatch
 | `legacy/paper-2010/ppblvblv_Grn_v42/` | MadEvent 4.4.42 process `pp -> b mu+ vm b~ mu- vm~` (via `t t~`) with the Green-function modification (`GrnFnc_blvblv/`) |
 | `legacy/paper-2010/ppblvbjj_Grn_v42/` | same for `pp -> b l nu b~ j j` (`GrnFnc_blvbjj/`) |
 | `legacy/paper-2010/GrnEP_pro/` | programs that compute the momentum-space Green function tables (`grnep{1,8}{thre,high}.tbl`) |
+| `standalone/` | 2015 stand-alone generators (BASES/SPRING), all final states: `bwbw`, `bwblv`, `blvblv`, `blvbjj`, `bjjbjj`. Shared sources in `standalone/common/` |
+| `scripts/run_standalone.sh` | build + run wrapper for `standalone/` (inside Docker) |
+| `docs/versions-2010-2015.md` | how the two versions relate (switches, inputs, outputs, cross-checks) |
 | `scripts/run_paper2010.sh` | build + run wrapper (inside Docker) |
 | `docker/` | Docker image |
 | `REFERENCES.md` | papers to cite (this work, MadGraph/MadEvent, ...) |
@@ -53,6 +56,33 @@ docker run --rm -v "$PWD":/work toponium-eg:dev \
 `IGRN`: 0 no Coulomb correction / 1 overall prescription / 2 total-angular-momentum
 prescription; `INR`: non-factorizable diagrams; `ITR`: PS-suppression removal;
 `IKF`: NLO normalisation. Output (LHE + banner) goes to `results/<proc>_<tag>/`.
+
+## Quick test (2015 stand-alone version)
+
+```bash
+docker run --rm -v "$PWD":/work toponium-eg:dev \
+  scripts/run_standalone.sh blvblv test IGRN=1 ITR=1 INR=0 IKF=1 \
+  NCALL=20000 ITMX1=3 ITMX2=3 NEVENT=200
+```
+
+`KEY=VALUE` arguments are written to `topbs.nml`, which overrides the defaults
+hard-coded in `standalone/<proc>/EG_<proc>.f` (see `standalone/common/steer.f`).
+`make -C standalone all-procs` builds every final state into `build/standalone/`.
+
+BASES/SPRING 5.0 is needed in `third_party/bases50/`. It is not distributed
+here while its licence is being checked (#6).
+
+## Which version to use
+
+- **MadEvent style (2010)**: the reference implementation of arXiv:1007.0075.
+  It is run like any MadEvent process (`run_card.dat`, `param_card.dat`,
+  LHE + banner), so it is the natural choice for experimental studies.
+- **Stand-alone (2015)**: more final states and lighter dependencies. It writes
+  LHE in the same layout (`<init>`, 12-particle records with t, W, b, leptons,
+  mothers and colour). Small differences remain: unit event weights, no
+  banner, mass column 0 for b quarks, and different process ids.
+
+See [docs/versions-2010-2015.md](docs/versions-2010-2015.md).
 
 ## References
 
