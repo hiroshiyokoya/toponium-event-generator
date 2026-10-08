@@ -36,6 +36,8 @@ Fortran 77 sources (`-std=legacy -fallow-argument-mismatch
 | `scripts/run_paper2010.sh` | build + run wrapper (inside Docker) |
 | `docker/` | Docker image |
 | `REFERENCES.md` | papers to cite (this work, MadGraph/MadEvent, ...) |
+| `THIRD_PARTY.md` | licences of bundled third-party code and data |
+| `docs/madgraph-status.md` | current status of MG5_aMC / MadGraph7 (survey) |
 
 The 2010 sources were restored from the original tarballs (symbolic links
 replaced by real files). Run products (`Events/`, `results/`, object files)
