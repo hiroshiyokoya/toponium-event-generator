@@ -1,0 +1,9 @@
+build/
+*.o
+*.so
+*.mod
+fort.*
+*.root
+*.ntup
+__pycache__/
+/_claude/
