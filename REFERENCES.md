@@ -60,10 +60,3 @@ For the current status of MG5_aMC and MadGraph7, see
   [arXiv:hep-ph/0201195](https://arxiv.org/abs/hep-ph/0201195).
 - Licences of bundled third-party code and data: see
   [THIRD_PARTY.md](THIRD_PARTY.md).
-- The original `GrnFnc_*/memo.txt` (dated 2010-06-29) says that the code is
-  described in "arXiv:1006.7014". This number never existed: the June 2010
-  identifiers end below 1006.6100. The memo was written two days before the
-  paper was submitted (arXiv:1007.0075 v1, 2010-07-01), so it meant
-  **arXiv:1007.0075**. That paper describes this code: its event generator
-  adapted to MadEvent 4.4.42 (Sec. 1 and Sec. 3), with the Green-function
-  correction tabulated as G/G₀.
