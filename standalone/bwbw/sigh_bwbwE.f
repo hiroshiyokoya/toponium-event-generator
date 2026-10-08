@@ -1,0 +1,328 @@
+      DOUBLE PRECISION FUNCTION INT12 (X)
+      IMPLICIT NONE
+      INTEGER I
+      DOUBLE PRECISION X(12),XX(10)
+      INTEGER IPART,ICLR
+      COMMON/ID/IPART,ICLR
+      INTEGER IHEL,IPROC,NCOMB
+      COMMON/HEL/IHEL
+      INTEGER ISPRC
+      COMMON/PROC/ISPRC
+      DOUBLE PRECISION RS
+      INTEGER IVAL,IBSS
+      COMMON/V10/RS,IVAL,IBSS
+      DOUBLE PRECISION INT10
+      EXTERNAL INT10
+      INTEGER NPART,OPROC
+      COMMON/PRC/NPART,OPROC(4)
+      INT12 = 0D0
+      IPROC = INT(NPART*X(11)) + 1
+      ISPRC = OPROC(IPROC)
+      IF (ISPRC.EQ.1) THEN
+         IPART = 1
+         ICLR = 2
+      ELSEIF (ISPRC.EQ.2) THEN
+         IPART = -1
+         ICLR = 2
+      ELSEIF (ISPRC.EQ.3) THEN
+         IPART = 2
+         ICLR = 1
+      ELSEIF (ISPRC.EQ.4) THEN
+         IPART = 2
+         ICLR = 2
+      ELSE
+         RETURN
+      ENDIF
+      NCOMB = 144
+      IHEL = INT(NCOMB*X(12)) + 1
+      DO I = 1, 10
+         XX(I) = X(I)
+      ENDDO
+      INT12 = INT10(XX) * DBLE(NPART) * DBLE(NCOMB)
+      CALL MKHIST (12,IVAL,IBSS,INT12,X)
+      RETURN
+      END
+C
+      DOUBLE PRECISION FUNCTION INT10 (X)
+      IMPLICIT NONE
+      INTEGER I,A
+      DOUBLE PRECISION X(10),XX(9),Z,ZJ
+      DOUBLE PRECISION MT,MB,MW,GAMT
+      COMMON/MASS/MT,MB,MW,GAMT
+      DOUBLE PRECISION MTT
+      COMMON/TT/MTT
+      DOUBLE PRECISION INT9
+      EXTERNAL INT9
+      DOUBLE PRECISION RS
+      INTEGER IVAL,IBSS
+      COMMON/V10/RS,IVAL,IBSS
+      DOUBLE PRECISION VRS,VMTT
+      INTEGER JVAL,JBSS
+      COMMON/V9/VRS,VMTT,JVAL,JBSS
+      DOUBLE PRECISION MIN,MAX
+      COMMON/INV/MIN,MAX
+      INTEGER IDYN
+      COMMON/DYN/IDYN
+      INTEGER INF
+      DOUBLE PRECISION PI,ASQCD,ASR,GS
+      PARAMETER (PI=3.141592654D0,INF=5)
+      EXTERNAL ASQCD
+      DOUBLE PRECISION MUR,MUF
+      COMMON/SCL/MUR,MUF
+      include 'coupl_sm.inc'
+      include 'run.inc'
+      INT10 = 0D0
+      A = 2
+      Z = X(10)**A
+      ZJ = A * X(10)**(A-1)
+      MTT = (MAX-MIN)*Z + MIN
+      IF (IDYN.EQ.1) THEN
+         MUR = MT/2. + MTT/4.
+         MUF = MUR
+         ASR = ASQCD (MUR,INF)
+         GS = DSQRT (4D0*PI*ASR)
+         GG(1) = DCMPLX (GS,0D0)
+         GG(2) = GG(1)
+         G = -GS
+         SCALE = MUR
+         Q2FACT(1) = MUF**2
+         Q2FACT(2) = Q2FACT(1)
+         ALFAS = ASR
+      ENDIF
+      DO I = 1,9
+         XX(I) = X(I)
+      ENDDO
+      VRS = RS
+      VMTT = MTT
+      JVAL = IVAL
+      JBSS = IBSS
+      INT10 = INT9(XX) * ZJ * (MAX-MIN)
+      RETURN
+      END
+C
+      DOUBLE PRECISION FUNCTION INT9 (X)
+      IMPLICIT NONE
+      INTEGER I
+      DOUBLE PRECISION X(9),Z
+      DOUBLE PRECISION MT,MB,MW,GAMT
+      COMMON/MASS/MT,MB,MW,GAMT
+      DOUBLE PRECISION JAC,LUM,SIGH
+      DOUBLE PRECISION RS,MTT
+      INTEGER IVAL,IBSS
+      COMMON/V9/RS,MTT,IVAL,IBSS
+      DOUBLE PRECISION S,SH,RSH,T
+      INTEGER IPART,ICLR
+      COMMON/ID/IPART,ICLR
+      INT9 = 0D0
+      S = RS**2
+      T = (MTT/RS)**2
+      SH = T * S
+      RSH = DSQRT(SH)
+      JAC = 1D0/S
+      Z = X(9)
+C.....
+      CALL SIGHAT (X,RSH,MTT,SIGH,IPART,ICLR,IBSS)
+      CALL LUMINO (Z,T,IPART,LUM)
+      INT9 = SIGH * LUM * JAC
+      RETURN
+      END
+C
+C
+      SUBROUTINE SIGHAT (X,RSH,MTT,SIGH,IPART,ICLR,IBSS)
+      IMPLICIT NONE
+      INTEGER I,IPART,ICLR,IBSS
+      DOUBLE PRECISION X(9),RSH,MTT,SIGH
+      DOUBLE PRECISION COS1,PHI1,COS2,PHI2,COS3,PHI3
+      DOUBLE PRECISION LMD1,LMD2,LMD3,LAM,JAC
+      DOUBLE PRECISION SH,ME2,ME2S,ME2O
+      DOUBLE PRECISION MIN1,MAX1,MIN2,MAX2,MT1,MT2,MP2
+      COMMON/BWM/MT1,MT2
+      DOUBLE PRECISION Z1,Z2,Z1MN,Z1MX,Z2MX,Z2MN
+      DOUBLE PRECISION MT,MB,MW,GAMT
+      COMMON/MASS/MT,MB,MW,GAMT
+      DOUBLE PRECISION P(0:3,6),PT(0:3),PTX(0:3)
+      COMMON/MOM/P
+      INTEGER ICUT,IFLG
+      COMMON/CUT/ICUT
+      INTEGER IKF
+      DOUBLE PRECISION KF(3)
+      COMMON/KFAC/KF,IKF
+      INTEGER IDYN
+      COMMON/DYN/IDYN
+      DOUBLE COMPLEX CZERO
+      PARAMETER ( CZERO=(0D0,0D0))
+      DOUBLE PRECISION PT2
+      INTEGER INF
+      DOUBLE PRECISION PI,ASQCD,ASR,GS
+      PARAMETER (PI=3.141592654D0,INF=5)
+      EXTERNAL ASQCD
+      DOUBLE PRECISION MUR,MUF
+      COMMON/SCL/MUR,MUF
+      include 'coupl_sm.inc'
+      include 'run.inc'
+      ME2 = 0D0
+      SIGH = 0D0
+      SH = RSH**2
+      MIN1 = MB + MW
+      MAX1 = RSH - MIN1
+*     IF (MAX1.LE.MIN1) MAX1 = MIN1
+      Z1MN = DATAN( (MIN1**2-MT**2)/MT/GAMT )
+      Z1MX = DATAN( (MAX1**2-MT**2)/MT/GAMT )
+      Z1 = (Z1MX-Z1MN)*X(1) + Z1MN
+      MT1 = DSQRT( MT**2 + MT*GAMT*DTAN(Z1) )
+      IF (MT1.LT.MB+MW) RETURN
+      MIN2 = MB + MW
+      MAX2 = RSH - MT1
+*     IF (MAX2.LE.MIN2) MAX2 = MIN2
+      Z2MN = DATAN( (MIN2**2-MT**2)/MT/GAMT )
+      Z2MX = DATAN( (MAX2**2-MT**2)/MT/GAMT )
+      Z2 = (Z2MX-Z2MN)*X(2) + Z2MN
+      MT2 = DSQRT( MT**2 + MT*GAMT*DTAN(Z2) )
+      IF (MT2.LT.MB+MW) RETURN
+      COS1 = 2D0*X(3) - 1D0     !
+      COS2 = 2D0*X(4) - 1D0     !
+      COS3 = 2D0*X(5) - 1D0     !
+      PHI3 = 2D0*PI*X(6)        !
+      PHI2 = 2D0*PI*X(7)        !
+      PHI1 = 2D0*PI*X(8)        !
+      CALL KINEMA4 (RSH,MT1,MT2,COS1,PHI1,COS2,PHI2,COS3,PHI3,P)
+C.....
+      IF (IDYN.EQ.2) THEN
+         PT2 = (P(1,3)+P(1,4))**2 + (P(2,3)+P(2,4))**2
+         MUR = DSQRT(MT**2 + PT2)
+         MUF = MUR
+         ASR = ASQCD (MUR,INF)
+         GS = DSQRT (4D0*PI*ASR)
+         GG(1) = DCMPLX (GS,0D0)
+         GG(2) = GG(1)
+         G = -GS
+         SCALE = MUR
+         Q2FACT(1) = MUF**2
+         Q2FACT(2) = Q2FACT(1)
+         ALFAS = ASR
+      ENDIF
+C.....
+      IF (ICUT.EQ.1) THEN
+         CALL KINECUT (IFLG)
+         IF (IFLG.EQ.1) RETURN
+      ENDIF
+C.....
+      IF ( IPART.EQ.1 ) THEN
+         CALL QQBWBW (P,ME2)
+      ELSEIF ( IPART.EQ.-1 ) THEN
+         P(3,1) = -P(3,1)
+         P(3,2) = -P(3,2)
+         CALL QQBWBW (P,ME2)
+      ELSEIF ( IPART.EQ.2 ) THEN
+         CALL GGBWBW (P,ME2,ICLR)
+      ENDIF
+C.....
+      IF (IKF.EQ.1) THEN
+         IF (IPART.EQ.1) THEN
+            ME2 = ME2 * KF(3)
+         ELSEIF (IPART.EQ.2 .AND. ICLR.EQ.1) THEN
+            ME2 = ME2 * KF(1)
+         ELSEIF (IPART.EQ.2 .AND. ICLR.EQ.2) THEN
+            ME2 = ME2 * KF(2)
+         ENDIF
+      ENDIF
+C.....
+      JAC  = (Z1MX-Z1MN) * ((MT1**2-MT**2)**2 + MT**2*GAMT**2)
+     -     / (MT*GAMT)
+     -     * (Z2MX-Z2MN) * ((MT2**2-MT**2)**2 + MT**2*GAMT**2)
+     -     / (MT*GAMT)
+      LMD1 = LAM (1D0,MT1**2/SH,   MT2**2/SH   )
+      LMD2 = LAM (1D0,MB**2/MT1**2,MW**2/MT1**2)
+      LMD3 = LAM (1D0,MB**2/MT2**2,MW**2/MT2**2)
+C.....
+      SIGH = ME2/(2D0*SH) * LMD1/(8D0*PI) * LMD2/(8D0*PI)
+     -     * LMD3/(8D0*PI) / (2D0*PI)**2 * JAC
+     -     * 2D0*MTT * 389429.57D3 ! pb/GeV
+      RETURN
+      END
+C
+      SUBROUTINE LUMINO (X,T,IPART,LUM)
+      IMPLICIT NONE
+      INTEGER I,IPART
+      DOUBLE PRECISION X,T,LUM
+      DOUBLE PRECISION YMIN,YMAX,DY,Y
+      DOUBLE PRECISION X1,X2,QQB,QBQ,GG,QG,GQ
+      DOUBLE PRECISION JAC
+      DOUBLE PRECISION MUR,MUF
+      COMMON/SCL/MUR,MUF
+      INTEGER IPRC,IEXP
+      COMMON/IP/IPRC,IEXP
+      COMMON/XBJ/X1,X2
+      include 'run.inc'
+      YMIN = DLOG(T)/2D0
+      YMAX = -YMIN
+      DY = YMAX - YMIN
+      Y = DY*X + YMIN
+      X1 = DSQRT(T) * DEXP(Y)
+      X2 = DSQRT(T) * DEXP(-Y)
+C...  'run.inc'
+      xbk(1) = x1
+      xbk(2) = x2
+C.....
+      CALL PTFL (X1,X2,QQB,QBQ,GG,QG,GQ,MUF**2,IPRC)
+      IF (IPART.EQ.1) THEN
+         LUM = QQB
+      ELSEIF (IPART.EQ.-1) THEN
+         LUM = QBQ
+      ELSEIF (IPART.EQ.2) THEN
+         LUM = GG
+      ENDIF
+      JAC = DY
+      LUM = LUM * JAC
+      IF (LUM.LT.0D0) LUM = 0D0
+      RETURN
+      END
+C
+      SUBROUTINE PTFL (X1,X2,QQB,QBQ,GG,QG,GQ,MU2,IPRC)
+      IMPLICIT NONE
+      DOUBLE PRECISION X1,X2,QQB,QBQ,GG,QG,GQ,MU2
+      DOUBLE PRECISION MU
+      INTEGER IPRC,IORD,IEXP
+      DOUBLE PRECISION PDF1(-6:6), PDF2(-6:6)
+      EXTERNAL CALLPDF
+      INTEGER IPDF,IPORD,ISUB,IERR
+      COMMON/PDF/IPDF,IPORD,ISUB,IERR
+      MU = DSQRT (MU2)
+      CALL CALLPDF (MU,X1,PDF1)
+      CALL CALLPDF (MU,X2,PDF2)
+      GG = PDF1(0) * PDF2(0) / X1 / X2
+      IF(IPRC.EQ.1) THEN        ! P-P
+         QQB = ( PDF1( 1)*PDF2(-1) + PDF1( 2)*PDF2(-2)
+     -        + PDF1( 3)*PDF2(-3) + PDF1( 4)*PDF2(-4) ) / X1 / X2
+         QBQ = ( PDF1(-1)*PDF2( 1) + PDF1(-2)*PDF2( 2)
+     -        + PDF1(-3)*PDF2( 3) + PDF1(-4)*PDF2( 4) ) / X1 / X2
+      ELSEIF (IPRC.EQ.2) THEN   ! P-PBAR
+         QQB = ( PDF1( 1)*PDF2( 1) + PDF1( 2)*PDF2( 2)
+     -        + PDF1( 3)*PDF2( 3) + PDF1( 4)*PDF2( 4) ) / X1 / X2
+         QBQ = ( PDF1(-1)*PDF2(-1) + PDF1(-2)*PDF2(-2)
+     -        + PDF1(-3)*PDF2(-3) + PDF1(-4)*PDF2(-4) ) / X1 / X2
+      ENDIF
+      RETURN
+      END
+C
+      SUBROUTINE KINECUT (IFLG)
+      IMPLICIT NONE
+      INTEGER I,IFLG
+      DOUBLE PRECISION P(0:3,6),PH(0:3,6)
+      COMMON/MOM/P
+      DOUBLE PRECISION MT,MB,MW,GAMT
+      COMMON/MASS/MT,MB,MW,GAMT
+      DOUBLE PRECISION MMVJ
+      COMMON/MVJ/MMVJ
+      DOUBLE PRECISION MT1,MT2
+      COMMON/BWM/MT1,MT2
+      DOUBLE PRECISION X1,X2
+      COMMON/XBJ/X1,X2
+      DOUBLE PRECISION SUMDOT
+      EXTERNAL SUMDOT
+      IFLG = 0
+*      CALL PCM2HCM (X1,X2,P,PH)
+      IF (DABS(MT1-MT).GT.20D0) IFLG = 1
+      IF (DABS(MT2-MT).GT.20D0) IFLG = 1
+      RETURN
+      END
