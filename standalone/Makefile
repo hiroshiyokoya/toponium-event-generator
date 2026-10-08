@@ -8,12 +8,19 @@
 # source tree. Libraries:
 #   - DHELAS: legacy/paper-2010/.../Source/DHELAS (MG/ME 4.4.42; same routines
 #     as the 2015 copy, plus fixes for negative masses), built once
-#   - BASES/SPRING 5.0: third_party/bases50 (incl. XHSAVE2), built once
+#   - BASES/SPRING, built once, chosen by BASES=51 (default) or BASES=50:
+#       51: official CPC V5.1. Put the zip downloaded from Mendeley Data into
+#           third_party/ (not redistributable; scripts/extract_bases51.sh
+#           extracts the library) + bases51/bases51_compat.f (BSSETD,
+#           BSSETP, XHSAVE2, CERNLIB DATIME/UCOPY/TIMEX/TIMEST)
+#       50: the KEK V5.0 copy used in 2015, if present in third_party/bases50
 #   - LHAPDF 6 (LHAGlue Fortran interface), from the Docker image
 #
 # Build inside the Docker image (see README).
 
-FC      ?= gfortran
+ifeq ($(origin FC),default)
+  FC := gfortran
+endif
 # The 2015 code was compiled with g77 (fixed form, 72 columns, static locals)
 FFLAGS  ?= -O2 -std=legacy -fno-automatic -finit-local-zero -w
 LHAPDF_CONFIG ?= lhapdf-config
@@ -22,7 +29,8 @@ TOP     := $(abspath ..)
 BUILD   ?= $(TOP)/build/standalone
 LIBDIR  := $(BUILD)/lib
 DHELAS_SRC := $(TOP)/legacy/paper-2010/ppblvblv_Grn_v42/Source/DHELAS
-BASES_SRC  := $(TOP)/third_party/bases50
+BASES   ?= 51
+BASES50_SRC := $(TOP)/third_party/bases50
 
 PROCS   := bwbw bwblv blvblv blvbjj bjjbjj
 PROC    ?= blvblv
@@ -69,7 +77,7 @@ ifeq ($(PROGS),)
 endif
 
 ODIR    := $(BUILD)/$(PROC)
-LIBS    := -L$(LIBDIR) -ldhelas3 -lbases50 \
+LIBS    := -L$(LIBDIR) -ldhelas3 -lbases$(BASES) \
            $(shell $(LHAPDF_CONFIG) --ldflags 2>/dev/null || echo -lLHAPDF)
 
 # process directory first, so that its nexternal.inc etc. win
@@ -84,8 +92,8 @@ all-procs:
 	@for p in $(PROCS); do $(MAKE) --no-print-directory PROC=$$p || exit 1; done
 
 .SECONDEXPANSION:
-$(ODIR)/%.exe: $$(addprefix $(ODIR)/,$$(OBJS_$$*)) | libs
-	$(FC) $(FFLAGS) -o $@ $^ $(LIBS)
+$(ODIR)/%.exe: $$(addprefix $(ODIR)/,$$(OBJS_$$*)) $(LIBDIR)/libbases$(BASES).a $(LIBDIR)/libdhelas3.a
+	$(FC) $(FFLAGS) -o $@ $(filter %.o,$^) $(LIBS)
 
 $(ODIR)/%.o: %.f | $(ODIR)
 	$(FC) $(FFLAGS) $(INCS) -c $< -o $@
@@ -96,7 +104,7 @@ $(ODIR) $(LIBDIR) $(LIBDIR)/dhelas $(LIBDIR)/bases:
 	mkdir -p $@
 
 # ---- libraries (built once, shared by all final states) ----
-libs: $(LIBDIR)/libdhelas3.a $(LIBDIR)/libbases50.a
+libs: $(LIBDIR)/libdhelas3.a $(LIBDIR)/libbases$(BASES).a
 
 DHELAS_OBJ := $(patsubst %,$(LIBDIR)/dhelas/%.o,$(basename $(notdir \
               $(wildcard $(DHELAS_SRC)/*.f $(DHELAS_SRC)/*.F))))
@@ -107,12 +115,27 @@ $(LIBDIR)/dhelas/%.o: $(DHELAS_SRC)/%.f | $(LIBDIR)/dhelas
 $(LIBDIR)/libdhelas3.a: $(DHELAS_OBJ)
 	ar rcs $@ $^
 
-BASES_OBJ := $(patsubst %,$(LIBDIR)/bases/%.o,$(basename $(notdir \
-             $(wildcard $(BASES_SRC)/*.f))))
-$(LIBDIR)/bases/%.o: $(BASES_SRC)/%.f | $(LIBDIR)/bases
-	$(FC) -O2 -std=legacy -w -fno-automatic -fno-second-underscore \
-	      -I$(BASES_SRC) -c $< -o $@
-$(LIBDIR)/libbases50.a: $(BASES_OBJ)
+BASESFLAGS := -O2 -std=legacy -w -fno-automatic -fno-second-underscore
+
+# V5.1 (CPC): extracted from the downloaded deck + compatibility layer
+$(LIBDIR)/bases51/bases51.f: | $(LIBDIR)
+	$(TOP)/scripts/extract_bases51.sh $(LIBDIR)/bases51
+$(LIBDIR)/bases51/%.o: $(LIBDIR)/bases51/%.f
+	$(FC) $(BASESFLAGS) -c $< -o $@
+$(LIBDIR)/bases51/bases51_compat.o: bases51/bases51_compat.f \
+                                    $(LIBDIR)/bases51/bases51.f
+	$(FC) $(BASESFLAGS) -c $< -o $@
+$(LIBDIR)/libbases51.a: $(LIBDIR)/bases51/bases51.o \
+                        $(LIBDIR)/bases51/bases51_compat.o
+	ar rcs $@ $^
+
+# V5.0 (KEK, as used in 2015): local copy in third_party/bases50
+BASES50_OBJ := $(patsubst %,$(LIBDIR)/bases/%.o,$(basename $(notdir \
+               $(wildcard $(BASES50_SRC)/*.f))))
+$(LIBDIR)/bases/%.o: $(BASES50_SRC)/%.f | $(LIBDIR)/bases
+	$(FC) $(BASESFLAGS) -I$(BASES50_SRC) -c $< -o $@
+$(LIBDIR)/libbases50.a: $(BASES50_OBJ)
+	@test -n "$(BASES50_OBJ)" || { echo "third_party/bases50 not found"; exit 1; }
 	ar rcs $@ $^
 
 clean:

@@ -69,8 +69,30 @@ docker run --rm -v "$PWD":/work toponium-eg:dev \
 hard-coded in `standalone/<proc>/EG_<proc>.f` (see `standalone/common/steer.f`).
 `make -C standalone all-procs` builds every final state into `build/standalone/`.
 
-BASES/SPRING 5.0 is needed in `third_party/bases50/`. It is not distributed
-here while its licence is being checked (#6).
+### BASES/SPRING (download it yourself)
+
+The stand-alone version needs **BASES/SPRING V5.1** (S. Kawabata, Comput.
+Phys. Commun. 88 (1995) 309). It is distributed by the CPC Program Library
+under the CPC licence, which does not allow redistribution, so it is not
+included here.
+
+1. Download the zip from Mendeley Data:
+   <https://elsevier.digitalcommonsdata.com/datasets/bsdm9422gc/1>
+2. Put it into `third_party/` as is (git-ignored).
+
+The build (`scripts/extract_bases51.sh`) takes the library part of the CPC
+deck. It changes one line, `REAL FUNCTION DRN*8` becomes `REAL*8 FUNCTION DRN`,
+for gfortran. It then links it with `standalone/bases51/bases51_compat.f`,
+which provides the routines the 2015 code expects: `BSSETD`, `BSSETP`,
+`XHSAVE2`, and the CERNLIB `DATIME`, `UCOPY`, `TIMEX`, `TIMEST`.
+
+With V5.1 the cross sections and the LHE files are bit-for-bit identical to
+those obtained with the KEK V5.0 copy used in 2015. All five final states
+were checked. If you have that V5.0 copy, `BASES=50` uses
+`third_party/bases50/` instead.
+
+When you publish results obtained with the stand-alone version, please cite
+the BASES/SPRING paper (required by the CPC licence).
 
 ## Which version to use
 

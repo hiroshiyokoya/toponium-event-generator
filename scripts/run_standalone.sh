@@ -15,7 +15,7 @@ TAG=${1:-default}; [ $# -gt 0 ] && shift
 REPO=${REPO:-/work}
 TABLES=${TABLES:-$REPO/legacy/paper-2010/ppblvblv_Grn_v42/GrnFnc_blvblv}
 
-make -s -C "$REPO/standalone" PROC="$PROC"
+make -s -C "$REPO/standalone" PROC="$PROC" BASES="${BASES:-51}"
 EXE=$REPO/build/standalone/$PROC/EG_$PROC.exe
 RUN=$REPO/build/run/${PROC}_${TAG}
 rm -rf "$RUN"; mkdir -p "$RUN"; cd "$RUN"
