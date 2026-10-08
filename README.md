@@ -10,19 +10,27 @@ states. The correction is applied to the full $pp\to bW^+\bar bW^-$ (+ decays) m
 The fully differential cross section is then correct at LO both near threshold and at high energy,
 and unweighted events are written in Les Houches format.
 
+- K. Hagiwara, Y. Sumino and H. Yokoya, *Bound-state effects on top quark production at hadron
+  colliders*, [arXiv:0804.1014](https://arxiv.org/abs/0804.1014), Phys. Lett. B 666 (2008) 71.
+  This paper introduced the bound-state effects on $t\bar t$ production at hadron colliders, in
+  the $t\bar t$ invariant-mass distribution near threshold.
 - Y. Sumino and H. Yokoya, *Bound-state effects on kinematical distributions of top quarks at
-  hadron colliders*, [arXiv:1007.0075](https://arxiv.org/abs/1007.0075), JHEP 09 (2010) 034.
-  This repository contains the code of that paper and its 2015 extension.
+  hadron colliders*, [arXiv:1007.0075](https://arxiv.org/abs/1007.0075), JHEP 09 (2010) 034;
+  erratum JHEP 06 (2016) 037.
+  This paper extended them to fully differential distributions with top decays. This repository
+  contains its code.
 
-The repository has two versions of the generator:
+The paper generated events in two ways: with BASES/SPRING, and with MadEvent 4.4.42 (its Sec. 3).
+The repository has both:
 
 - **MadEvent style (2010)**, `legacy/paper-2010/`. These are the MadGraph/MadEvent v4.4.42 process
   directories of the paper, with the Green-function modification. They run like any MadEvent
   process (`run_card.dat`, `param_card.dat`, LHE + banner), so this is the natural choice for
   experimental studies. Final states: `blvblv`, `blvbjj`.
-- **Stand-alone (2015)**, `standalone/`. This is a Fortran program with BASES/SPRING and
-  MadGraph II/HELAS matrix elements. It has more final states (`bwbw`, `bwblv`, `blvblv`, `blvbjj`,
-  `bjjbjj`) and writes LHE in the same layout.
+- **Stand-alone (BASES/SPRING)**, `standalone/`. This is a Fortran program with BASES/SPRING and
+  MadGraph II/HELAS matrix elements. The BASES/SPRING-based code predates the paper. The
+  repository holds it as of 2015, which has more final states (`bwbw`, `bwblv`, `blvblv`,
+  `blvbjj`, `bjjbjj`) and writes LHE in the same layout.
 
 > **Status (2026-10).**
 >
@@ -82,7 +90,7 @@ Both versions use the same switches (details in
 | Switch | Meaning |
 |---|---|
 | `IGRN` | 0: no bound-state correction, 1: overall correction prescription, 2: total-angular-momentum prescription |
-| `INR` | non-factorizable (non-resonant) diagrams: 0 none, 1 fixed-width scheme (2015 also: 2 overall factor) |
+| `INR` | non-factorizable (non-resonant) diagrams: 0 none, 1 fixed-width scheme (stand-alone also: 2 overall factor) |
 | `ITR` | 0: naive diagrammatic separation, 1: remove the phase-space suppression in the resonant amplitude |
 | `IKF` | 1: normalise each subprocess (gg singlet, gg octet, qq̄) to NLO with K factors for LHC 14 TeV |
 
@@ -106,7 +114,7 @@ The default `run_card.dat` of the paper uses 14 TeV, CTEQ6L1, a fixed scale $\mu
 ($p_T>10$ GeV, $|\eta|<2.5$) and `bwcutoff=15`. Because the W's are declared as decay chains,
 `bwcutoff` keeps only events with $|m_{\ell\nu}-m_W|<15\,\Gamma_W$.
 
-## Stand-alone (2015)
+## Stand-alone (BASES/SPRING)
 
 ```bash
 docker run --rm -v "$PWD:/work" toponium-eg:dev \
@@ -153,8 +161,8 @@ CTEQ6 and BASES/SPRING.
 
 [MIT](LICENSE), © 2010–2026 Hiroshi Yokoya. You may use, modify and redistribute the code freely,
 as long as the copyright notice and the licence text are kept. If you use it in a publication,
-please cite arXiv:1007.0075. If you use the stand-alone version, also cite BASES/SPRING, which
-the CPC licence requires.
+please cite arXiv:1007.0075 and arXiv:0804.1014. If you use the stand-alone version, also cite
+BASES/SPRING, which the CPC licence requires.
 
 The MIT licence does not cover the third-party code and data in the MadEvent process directories
 of `legacy/paper-2010/`: MadGraph/MadEvent v4, HELAS, CERNLIB routines (GPL) and PDF tables.
