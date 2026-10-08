@@ -26,7 +26,8 @@ frame. The generators then read the table and interpolate.
 The repository ships one set, made for $m_t = 173$ GeV, $\Gamma_t = 1.4911$ GeV and
 $\alpha_s(\mu_B) = 0.1534$ at $\mu_B = 20$ GeV, with the one-loop fixed-order QCD
 potential. It is in `legacy/paper-2010/ppblvblv_Grn_v42/GrnFnc_blvblv/`, and the identical
-set is in `ppblvbjj_Grn_v42/GrnFnc_blvbjj/`. Both versions of the generator use it.
+set is in `ppblvbjj_Grn_v42/GrnFnc_blvbjj/` and `ppbwbw_Grn_v42/GrnFnc_bwbw/`. Both versions of
+the generator use it.
 
 ### Format
 
