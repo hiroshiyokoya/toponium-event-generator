@@ -5,6 +5,14 @@
   top quarks at hadron colliders*, JHEP 09 (2010) 034,
   [arXiv:1007.0075](https://arxiv.org/abs/1007.0075).
 
+## BASES/SPRING (stand-alone version)
+- S. Kawabata, *A new version of the multi-dimensional integration and event
+  generation package BASES/SPRING*, Comput. Phys. Commun. 88 (1995) 309,
+  [doi:10.1016/0010-4655(95)00028-E](https://doi.org/10.1016/0010-4655(95)00028-E).
+  The program (V5.1, catalogue AAFW_v2_0) is on
+  [Mendeley Data](https://elsevier.digitalcommonsdata.com/datasets/bsdm9422gc/1)
+  under the CPC licence. Citation is required.
+
 ## MadGraph / MadEvent
 The 2010 code (`legacy/paper-2010/`) is a **MadGraph/MadEvent v4** process
 directory (`MGMEVersion.txt`: 4.4.42, `TemplateVersion.txt`: 2.4.21) modified

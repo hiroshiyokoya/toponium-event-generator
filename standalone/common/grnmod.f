@@ -1,0 +1,23 @@
+      SUBROUTINE GRNMOD (GAMMA,ST,SX,SH,MT,ICLR,ITHR)
+      IMPLICIT NONE
+      DOUBLE COMPLEX GAMMA
+      DOUBLE PRECISION MT
+      INTEGER ICLR,ITHR
+      DOUBLE PRECISION E,P
+      DOUBLE PRECISION ST,SX,SH,SBT
+      DOUBLE PRECISION LAM,A,B,C
+      LAM(A,B,C) = MAX(0D0,DSQRT(A**2+B**2+C**2-2D0*(A*B+B*C+C*A)))
+      IF (ITHR.GE.1) THEN
+         SBT = 1D0 - 4D0*MT**2/SH
+C.....
+*         E = MT * SBT
+*         E = DSQRT(SH) - 2D0*MT
+         E = SH/(4D0*MT) - MT
+C.....
+         P = DSQRT(SH)/2D0 * LAM(1D0,ST/SH,SX/SH)
+         CALL READGRN (GAMMA,E,P,ICLR)
+      ELSE
+         GAMMA = (1D0,0D0)
+      ENDIF
+      RETURN
+      END

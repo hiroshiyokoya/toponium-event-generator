@@ -25,3 +25,8 @@ legacy/**/SubProcesses/P*/results.dat
 legacy/**/SubProcesses/P*/*.log
 # bulk data copied from backup (not tracked)
 data/
+# BASES/SPRING 5.0 (KEK): redistribution terms not confirmed yet (#6) -- local only
+third_party/bases50/
+# BASES/SPRING V5.1 download from the CPC Program Library (CPC licence, not redistributable)
+third_party/*.zip
+third_party/aafw_v2_0*

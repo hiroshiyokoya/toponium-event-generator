@@ -33,6 +33,13 @@ cat "$GRN"/thr11.inc | sed -n '3,$p' >> "$GRN/thr_user.inc"
 ln -sf thr_user.inc "$GRN/thr.inc"
 ( cd "$GRN" && bash ./link.sh )
 sed -i "s/^ *[0-9]* *= *nevents.*/ $NEV = nevents/" Cards/run_card.dat
+# optional run_card overrides, e.g. RUNCARD="ptl=0 etal=1d2" (removes lepton cuts)
+for kv in ${RUNCARD:-}; do
+  key=${kv%%=*}; val=${kv#*=}
+  grep -qE "^\s*\S+\s*=\s*${key}(\s|!|$)" Cards/run_card.dat || { echo "no $key in run_card"; exit 1; }
+  sed -i -E "s/^\s*\S+(\s*=\s*${key})(\s|!|$)/ ${val}\1\2/" Cards/run_card.dat
+  grep -E "=\s*${key}(\s|!|$)" Cards/run_card.dat
+done
 ./bin/generate_events 2 "$NCORE" "$TAG" 2>&1 | tail -40
 OUT=$REPO/results/${PROC}_${TAG}; mkdir -p "$OUT"
 cp Events/${TAG}_unweighted_events.lhe.gz "$OUT/" 2>/dev/null || true
