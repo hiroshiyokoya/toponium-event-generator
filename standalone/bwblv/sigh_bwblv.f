@@ -5,7 +5,7 @@ C     Older version, used by main_bwblv.f (d(sigma)/d(m_tt) at fixed
 C     m_tt, integrand INT12) and tot_bwblv.f (sigma integrated over
 C     m_tt, integrand INT13). Helicities and colours are summed inside
 C     the matrix elements. For q qbar the luminosity QQ of
-C     common/ptfl.f (both beam orientations) multiplies the matrix
+C     common/ptfl.f (quark from either beam) multiplies the matrix
 C     element with the quark along +z.
 C
 C     Integration variables, all in [0,1]:
