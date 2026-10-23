@@ -1,3 +1,54 @@
+C=======================================================================
+C     sigh_bjjbjjE.f : integrand of EG_bjjbjj.f for
+C     p p -> b j j bbar j j (t, tbar, W+, W- off shell; both W decay
+C     to two quarks). The matrix elements are those of blvblv with
+C     the colour factors of the hadronic W decays (me_*bjjbjjE.f).
+C     with the bound-state correction of Sumino & Yokoya
+C     (arXiv:1007.0075). BASES integrates INT18; SPRING generates
+C     events from it.
+C
+C     Call chain. The integrand is d(sigma) [pb] per unit volume of
+C     the BASES hypercube [0,1]^18:
+C       INT18 (18 dim) : Monte-Carlo sum over subprocess and helicity
+C       INT16 (16 dim) : m_tt = sqrt(s-hat) [GeV] from X(16)
+C       INT15 (15 dim) : tau = m_tt^2/s, luminosity, pb conversion
+C       SIGHAT         : virtualities, angles, |M|^2, K factor, flux
+C                        and phase space
+C       LUMINO, PTFL   : rapidity and parton luminosity
+C       KINECUT        : optional cut (ICUT=1)
+C
+C     Integration variables X(1..18), all in [0,1]:
+C       X(1), X(2)  : top and antitop virtualities (Breit-Wigner)
+C       X(3), X(4)  : W+ and W- virtualities (Breit-Wigner)
+C       X(5), X(14) : cos(theta), phi of the top (parton c.m. frame)
+C       X(6), X(13) : b in the top rest frame
+C       X(7), X(12) : bbar in the antitop rest frame
+C       X(8), X(11) : W+ decay (particle 4) in the W+ rest frame
+C       X(9), X(10) : W- decay (particle 7) in the W- rest frame
+C       X(15)       : rapidity of the t tbar system (LUMINO)
+C       X(16)       : m_tt
+C       X(17)       : subprocess,  X(18) : helicity combination
+C     The decay angles are taken with respect to the axes of the
+C     parton c.m. frame (MOM2CX + BOOSTX in kinema6.f).
+C=======================================================================
+C
+C-----------------------------------------------------------------------
+C     INT18(X): X(17) chooses one of the NPART active subprocesses
+C     OPROC(1..NPART) (COMMON/PRC/, set in EG_bjjbjj.f from IPART and
+C     ICLR):
+C       code 1 : q qbar (quark from beam 1), colour octet
+C            2 : qbar q (antiquark from beam 1), colour octet
+C            3 : g g, colour singlet
+C            4 : g g, colour octet
+C     X(18) chooses one helicity combination IHEL (COMMON/HEL/, read
+C     by the matrix elements). The factor NPART*NCOMB makes the result
+C     a Monte-Carlo estimate of the sum over subprocesses and
+C     helicities. MKHIST (EG_bjjbjj.f) fills the histograms.
+C     Unlike blvblv and blvbjj, COMMON/PROC/ here holds IPROC, the
+C     position in OPROC, not the code OPROC(IPROC). lheout.f reads
+C     it as the subprocess code; the two agree only when all four
+C     subprocesses are active (IPART=0, ICLR=0).
+C-----------------------------------------------------------------------
       DOUBLE PRECISION FUNCTION INT18 (X)
       IMPLICIT NONE
       INTEGER I
@@ -31,6 +82,8 @@
       ELSE
          RETURN
       ENDIF
+C     16 helicity combinations: those listed in the NHEL DATA
+C     statements of the matrix elements
       NCOMB = 16
       IHEL = INT(NCOMB*X(18)) + 1
       DO I = 1, 16
@@ -41,6 +94,15 @@
       RETURN
       END
 C
+C-----------------------------------------------------------------------
+C     INT16(X): t tbar invariant mass MTT = exp(L) [GeV], L uniform in
+C     [ln MIN, ln MAX] (COMMON/INV/; EG_bjjbjj.f: 2 m_b + 2 MWCUT1 and
+C     sqrt(s)). Jacobian d(MTT)/dX(16) = (ln MAX - ln MIN) MTT. The
+C     power-law mapping is kept as comments.
+C     IDYN=1: mu_R = mu_F = m_t/2 + MTT/4; alpha_s, g_s (coupl_sm.inc)
+C     and SCALE, Q2FACT, ALFAS (run.inc) are reset.
+C     MTT goes to INT15 through COMMON/V15/ (and COMMON/TT/).
+C-----------------------------------------------------------------------
       DOUBLE PRECISION FUNCTION INT16 (X)
       IMPLICIT NONE
       INTEGER I,A
@@ -107,9 +169,13 @@ C.....
       RETURN
       END
 C
+C-----------------------------------------------------------------------
+C     INT15(X): s = RS^2 (RS = collider energy [GeV]),
+C     tau = T = MTT^2/s, s-hat = tau s; JAC = 1/s. X(15) -> rapidity in
+C     LUMINO. INT15 = d(sigma)/d(MTT) per unit X(1..15) [pb/GeV].
+C-----------------------------------------------------------------------
       DOUBLE PRECISION FUNCTION INT15 (X)
       IMPLICIT NONE
-      INTEGER I
       DOUBLE PRECISION X(15),Z
       DOUBLE PRECISION MT,MB,MW,GAMT,GAMW
       COMMON/MASS/MT,MB,MW,GAMT,GAMW
@@ -132,19 +198,39 @@ C.....
       CALL LUMINO (Z,T,IPART,LUM)
       INT15 = SIGH * LUM * JAC
 C.....
+C     2*MTT/s = d(tau)/d(MTT); 389429.57D3 converts GeV^-2 to pb
+C     (about 0.3894 mb GeV^2)
       INT15 = INT15 * 2D0*MTT * 389429.57D3 ! pb/GeV
       RETURN
       END
 C
 C
+C-----------------------------------------------------------------------
+C     SIGHAT: partonic part. Input X(1..14), RSH = sqrt(s-hat) = MTT
+C     [GeV], IPART (1 q qbar, -1 qbar q, 2 g g), ICLR (1 singlet,
+C     2 octet). Output SIGH = |M|^2 x flux x phase space [GeV^-2].
+C
+C     Breit-Wigner mapping of a virtuality s (mass m, width w):
+C       s = m^2 + m w tan(z), z uniform between the atan of the
+C       limits; JAC_i = (ds/dX)/(2 pi) = (z_max-z_min)
+C       [(s-m^2)^2 + m^2 w^2]/(2 pi m w), i.e. it includes the
+C       1/(2 pi) of ds/(2 pi). The flat mappings are kept as comments.
+C     MWCUT1 = m_W + 0.1 GeV, MWCUT2 = 0.1 GeV (COMMON/CUT/, set in
+C     EG_bjjbjj.f): the top virtualities stay above m_b + MWCUT1,
+C     so that the width in CORR (ITR=1) does not vanish; MWCUT2 is
+C     the lower limit of the W virtualities.
+C     The momenta P(0:3,1..8) (parton c.m. frame, KINEMA6) are stored
+C     in COMMON/MOM/: g1, g2, b, W+ decay products (4, 5), bbar,
+C     W- decay products (7, 8); MR1..MR4 [GeV] in COMMON/BWM/.
+C-----------------------------------------------------------------------
       SUBROUTINE SIGHAT (X,RSH,SIGH,IPART,ICLR,IBSS)
       IMPLICIT NONE
-      INTEGER I,IPART,ICLR,IBSS
+      INTEGER IPART,ICLR,IBSS
       DOUBLE PRECISION X(15),RSH,SIGH,MTT
       DOUBLE PRECISION COS1,PHI1,COS2,PHI2,COS3,PHI3,COS4,PHI4,COS5,PHI5
       DOUBLE PRECISION LMD1,LMD2,LMD3,LMD4,LMD5,LAM
       DOUBLE PRECISION JAC,JAC1,JAC2,JAC3,JAC4
-      DOUBLE PRECISION SH,ME2,ME2S,ME2O
+      DOUBLE PRECISION SH,ME2
       DOUBLE PRECISION MIN1,MAX1,MIN2,MAX2,MIN3,MAX3,MIN4,MAX4
       DOUBLE PRECISION MR1,MR2,MR3,MR4
       COMMON/BWM/MR1,MR2,MR3,MR4
@@ -163,8 +249,6 @@ C
       COMMON/KFAC/KF,IKF
       INTEGER IDYN
       COMMON/DYN/IDYN
-      DOUBLE COMPLEX CZERO
-      PARAMETER ( CZERO=(0D0,0D0))
       DOUBLE PRECISION PT2
       INTEGER INF
       DOUBLE PRECISION PI,ASQCD,ASR,GS
@@ -179,6 +263,7 @@ C
       SIGH = 0D0
       SH = RSH**2
 C...  Resonance mass 1
+C     Top: MR1 in [m_b+MWCUT1, sqrt(s-hat)-m_b-MWCUT1] from X(1)
       MIN1 = MB + MWCUT1
       MAX1 = RSH - MB - MWCUT1
       Z1MN = DATAN2 (MIN1**2-MT**2, MT*GAMT)
@@ -190,6 +275,7 @@ C...  Resonance mass 1
 *      MR1 = (MAX1-MIN1)*X(1) + MIN1
 *      JAC1 = MAX1-MIN1
 C...  Resonance mass 2
+C     Antitop: MR2 in [m_b+MWCUT1, sqrt(s-hat)-MR1] from X(2)
       MIN2 = MB + MWCUT1
       MAX2 = RSH - MR1
       Z2MN = DATAN2 (MIN2**2-MT**2, MT*GAMT)
@@ -201,6 +287,7 @@ C...  Resonance mass 2
 *      MR2 = (MAX2-MIN2)*X(2) + MIN2
 *      JAC2 = MAX2-MIN2
 C...  Resonance mass 3
+C     W+: MR3 in [MWCUT2, MR1-m_b] from X(3)
       MIN3 = MWCUT2
       MAX3 = MR1 - MB
       Z3MN = DATAN2 (MIN3**2-MW**2, MW*GAMW)
@@ -212,6 +299,7 @@ C...  Resonance mass 3
 *      MR3 = (MAX3-MIN3)*X(3) + MIN3
 *      JAC3 = MAX3-MIN3
 C...  Resonance mass 4
+C     W-: MR4 in [MWCUT2, MR2-m_b] from X(4)
       MIN4 = MWCUT2
       MAX4 = MR2 - MB
       Z4MN = DATAN2 (MIN4**2-MW**2, MW*GAMW)
@@ -223,6 +311,9 @@ C...  Resonance mass 4
 *      MR4 = (MAX4-MIN4)*X(4) + MIN4
 *      JAC4 = MAX4-MIN4
 C.....
+C     Angles: cos(theta) = 2X-1, phi = 2 pi X; with dOmega/(4 pi) in
+C     the two-body phase space the Jacobian is 1. 1: top, 2: b in t,
+C     3: bbar in tbar, 4: W+ decay, 5: W- decay (rest frames).
       COS1 = 2D0*X(5) - 1D0     !
       COS2 = 2D0*X(6) - 1D0     !
       COS3 = 2D0*X(7) - 1D0     !
@@ -236,6 +327,8 @@ C.....
       CALL KINEMA6 (RSH, MR1,MR2,MR3,MR4,
      -     COS1,PHI1,COS2,PHI2,COS3,PHI3,COS4,PHI4,COS5,PHI5, P)
 C.....
+C     IDYN=2: mu_R = mu_F = sqrt(m_t^2 + pT^2), pT of the top
+C     (particles 3+4+5); couplings reset as in INT16
       IF (IDYN.EQ.2) THEN
          PT2 = (P(1,3)+P(1,4)+P(1,5))**2 + (P(2,3)+P(2,4)+P(2,5))**2
          MUR = DSQRT(MT**2 + PT2)
@@ -251,11 +344,19 @@ C.....
          ALFAS = ASR
       ENDIF
 C...  Kinematical Cut
+C     Optional cut (ICUT=1), see KINECUT
       IF (ICUT.EQ.1) THEN
          CALL KINECUT (P,IFLAG)
          IF (IFLAG.EQ.1) RETURN
       ENDIF
 C.....
+C     |M|^2 for helicity combination IHEL, summed over colours and
+C     divided by the initial spin and colour average (IDEN in the
+C     matrix element). The q qbar matrix element is written for the
+C     quark along +z. For IPART = -1 (antiquark from beam 1) the z
+C     components of the two incoming momenta are reversed; the
+C     reversed momenta stay in COMMON/MOM/. The q qbar matrix element
+C     (u ubar) is used for all quark flavours of the luminosity.
       IF ( IPART.EQ.1 ) THEN
          CALL QQBJJBJJ (P,ME2)
       ELSEIF ( IPART.EQ.-1 ) THEN
@@ -266,6 +367,10 @@ C.....
          CALL GGBJJBJJ (P,ME2,ICLR)
       ENDIF
 C.....
+C     K factors (IKF=1, COMMON/KFAC/, DATA in EG_bjjbjj.f): KF(1) g g
+C     singlet, KF(2) g g octet, KF(3) q qbar; values for LHC 14 TeV
+C     (docs/REVIEW.md, P4). IPART = -1 (qbar q) is not covered by
+C     this IF block, so that orientation keeps K = 1.
       IF (IKF.EQ.1) THEN
          IF (IPART.EQ.1) THEN
             ME2 = ME2 * KF(3)
@@ -276,6 +381,12 @@ C.....
          ENDIF
       ENDIF
 C.....
+C     Cross section: flux 1/(2 s-hat) and phase space
+C       dPhi = prod_i ds_i/(2 pi) x dPhi2(t tbar) dPhi2(t -> b W+*)
+C              dPhi2(tbar -> bbar W-*) dPhi2(W+*) dPhi2(W-*),
+C       dPhi2 = lambda^(1/2)/(8 pi) dOmega/(4 pi),
+C     LMD = lambda^(1/2) (LAM in kinema6.f); LMD4 = LMD5 = 1 for the
+C     massless W decay products.
       JAC  = JAC1 * JAC2 * JAC3 * JAC4
       LMD1 = LAM (1D0,MR1**2/SH,   MR2**2/SH    )
       LMD2 = LAM (1D0,MB**2/MR1**2,MR3**2/MR1**2)
@@ -288,9 +399,18 @@ C.....
       RETURN
       END
 C
+C-----------------------------------------------------------------------
+C     LUMINO: parton luminosity at tau = T = x1 x2 for IPART. X (the
+C     variable X(15)) is mapped linearly to the t tbar rapidity
+C       y in [ln(T)/2, -ln(T)/2],  x1 = sqrt(T) e^y,  x2 = sqrt(T) e^-y,
+C     so that dx1 dx2 = d(tau) dy; the Jacobian DY is included in LUM.
+C     x1, x2 are stored in COMMON/XBJ/ and in xbk (run.inc). The PDFs
+C     are taken at mu_F (COMMON/SCL/). LUM = QQB (IPART=1), QBQ (-1)
+C     or GG (2), times DY; negative values are set to 0.
+C-----------------------------------------------------------------------
       SUBROUTINE LUMINO (X,T,IPART,LUM)
       IMPLICIT NONE
-      INTEGER I,IPART
+      INTEGER IPART
       DOUBLE PRECISION X,T,LUM
       DOUBLE PRECISION YMIN,YMAX,DY,Y
       DOUBLE PRECISION X1,X2,QQB,QBQ,GG,QG,GQ
@@ -325,11 +445,22 @@ C.....
       RETURN
       END
 C
+C-----------------------------------------------------------------------
+C     PTFL (version of the EG_* generators; common/ptfl.f has another
+C     interface): products of parton densities at scale^2 MU2 [GeV^2]
+C       GG  : g(X1) g(X2)
+C       QQB : sum over q = d,u,s,c of q(X1) qbar(X2)
+C       QBQ : sum over q = d,u,s,c of qbar(X1) q(X2)
+C     b quarks are not included. IPRC = 1 pp, 2 p pbar (beam 2 is an
+C     antiproton: its qbar density is the proton density of q).
+C     QG and GQ are not set. CALLPDF returns x f(x), hence the
+C     division by X1 X2.
+C-----------------------------------------------------------------------
       SUBROUTINE PTFL (X1,X2,QQB,QBQ,GG,QG,GQ,MU2,IPRC)
       IMPLICIT NONE
       DOUBLE PRECISION X1,X2,QQB,QBQ,GG,QG,GQ,MU2
       DOUBLE PRECISION MU
-      INTEGER IPRC,IORD,IEXP
+      INTEGER IPRC, IEXP
       DOUBLE PRECISION PDF1(-6:6), PDF2(-6:6)
       EXTERNAL CALLPDF
       INTEGER IPDF,IPORD,ISUB,IERR
@@ -352,6 +483,12 @@ C
       RETURN
       END
 C
+C-----------------------------------------------------------------------
+C     KINECUT (ICUT=1): all cuts are commented out, IFLAG stays 0.
+C     The particle indices are those of sigh_bwblv.f; with the
+C     ordering of KINEMA6, P(0,5) is a W+ decay product and P(0,6)
+C     the bbar. R2 (kin_functions.f) is Delta R squared.
+C-----------------------------------------------------------------------
       SUBROUTINE KINECUT (P,IFLAG)
       IMPLICIT NONE
       INTEGER IFLAG

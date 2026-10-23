@@ -16,6 +16,7 @@
 | 再現テスト | 同梱の表と同じ $\alpha_s=0.1534$ で一部のエネルギー点を計算し直し、同梱の表と比べる | `scripts/check/compare_tables.py diff` |
 | 格子の索引 | 高エネルギー側の表で、運動量 → 区間番号（`PINT`）が格子点（`PP`）と整合するか | `scripts/check/pint_check.f` |
 | 範囲外の値 | 表の範囲外で返る Γ | `scripts/check/grn_extrap.f`（#9） |
+| 回帰テスト | スタンドアロン版 4 終状態の σ と LHE、Green 関数の表 4 枚（一部のエネルギー点）のチェックサムを、変更の前後で比べる（#29） | `scripts/check/regression.sh` |
 
 部分実行は、`GrnEPthre.f` のエネルギーを 100 点おき、`GrnEPhigh.f` を 50 点おきにして行った（[green-function-tables.md](green-function-tables.md) の手順で `DO 50 IE` の刻みだけ変更）。
 
@@ -112,6 +113,60 @@
 ### P17. `GrnEP_pro/Makefile` が `g77` 前提 — verified
 - `make LD=gfortran FFLAGS="-O3 -ffixed-line-length-132 -std=legacy -w"` で 3 種のポテンシャルとも作れる。
 - **提案**：既定を gfortran にする。
+
+## 追加の指摘（2026-10、コメント追加と gfortran の警告の整理で見つけたもの、#29）
+
+自作のファイルに英語のコメントを足す作業（#29）で、コードを読んで見つけた点。確度は各項目に書く。
+
+### P18. LHE で、W のハドロン崩壊のクォークの種類が電荷と合わない — read（コードで確認）
+- `blvbjj/lheout_12.f` は W⁻ の崩壊先を u と d̄（`IDUP = 2, -1`、電荷の和 +1）と書く。正しくは d と ū。
+- `bjjbjj/lheout.f` は W⁺ 側を ū と d（電荷の和 −1）、W⁻ 側を u と d̄（+1）と書き、両方とも逆。行列要素（`me_*E.f`）のラベルとも合わない。
+- 影響（inference）：シャワープログラムの電荷保存の検査で、警告や事象の棄却が起こりうる。
+- **提案**：W⁺ → u d̄、W⁻ → d ū に直す（`IDUP` の符号を入れ替える）。P2 と合わせて直すとよい。
+
+### P19. q̄q の向き（`IPART=-1`）に K 因子が掛からない — read（コードで確認）
+- `sigh_*E.f` の K 因子の分岐は `IPART=1`（qq̄）と `IPART=2`（gg）だけで、`IPART=-1`（q̄q）がない。`IKF=1` でも qq̄ チャンネルの半分は NLO の規格化（`KF(3)=1.16`）なしになる。2010 年版はどちらの向きにも掛ける。
+- 影響（inference）：14 TeV で qq̄ は全体の約 13% なので、全断面積で約 1%。
+- **提案**：`IPART.EQ.1 .OR. IPART.EQ.-1` にする。
+
+### P20. `bjjbjj` の LHE で、サブプロセスの番号を取り違えることがある — read
+- `sigh_bjjbjjE.f` は `COMMON/PROC/` にサブプロセスの「位置」（`IPROC`）を入れるが、`bjjbjj/lheout.f` はそれを「番号」（`OPROC(IPROC)`）として読む。両者が一致するのは、有効なサブプロセスが番号順に先頭から並ぶとき（`IPART=0, ICLR=0` と `IPART=1`）だけ。たとえば `IPART=2`（gg だけ）では、gg の事象が LHE に q q̄ の始状態で書かれる。
+- **提案**：他の終状態と同じく `OPROC(IPROC)` を入れる。
+
+### P21. `GrnEPhigh.f` の再試行で、増やす刻み数の変数が違う — read
+- 高エネルギー側のプログラムのループは `NLOOPH` を使うが、$r\to\infty$ で収束しないときの再試行は `NLOOPT` を増やす（閾値側と同じ書き方のまま）。再試行しても刻み数は増えず、積分範囲が 0.2 広がる（刻みが粗くなる）だけ。
+- `I8` の初期値が閾値側（1）と違って 0 なので、収束の数え始めが 1 歩遅れる（害はない）。
+- **提案**：`NLOOPH` を増やす。P6・P13 と合わせて直す。
+
+### P22. VEGAS（`IBSS=0`）の経路はそのままでは使えない — read
+- `intvegas.f` は 10 変数までの配列だが、EG は 12（bwbw）または 18 変数で呼ぶ。また `IBSS=0` の分岐は結果を `SIG` に入れない。
+- **提案**：使わない経路として docs に明記するか、配列の大きさと結果の受け渡しを直す。
+
+### P23. `main_*`／`tot_*` はそのままでは Docker で動かない可能性がある — read
+- `main_blvblv`, `main_bwblv`, `tot_bwblv` は `SETPDF` 経由で `cteq6l.LHpdf`（CTEQ6L、NLO の α_s）を読むが、Docker イメージは `cteq6l1` しか入れていない。
+- `main_*` は param_card の Γ_t を LO の値（`RGAMT`）で上書きする。Green 関数の表（Γ_t = 1.4911 GeV）とずれうる（P3）。
+- `main_bwblv` は $m_{t\bar t}$ の走査ループがコメントアウトされていて、344 GeV の 1 点だけを計算する。
+- **提案**：使うなら PDF セットを Docker に足し、Γ_t の扱いを表とそろえる。
+
+### P24. その他の小さな点 — read
+- `EG_blvbjj` と `tot_bwblv` は、作っていないヒストグラム（33, 34, 36）を `XHSAVE2` で書こうとする（BASES が警告を出して飛ばす）。
+- `blvblv`, `blvbjj`, `bjjbjj` の `KINECUT` は中身がすべてコメントアウトで、`ICUT=1` が効かない。`bwblv` の `KINECUT` は ΔR²（パートン系）で b̄ と μ⁻ が近い事象だけを残す。
+- `PI = 3.1415923D0`（桁の誤り）が `sigh_*` の一部にある。`IDYN=1` のときの g_s にだけ入る。
+- `EG_bwbw` の `MKHIST` は `X(10)` と宣言して 12 個を回す（呼び出し側の配列が 12 個なので動いている）。
+- `tot_bwblv` の動的スケール（`IDYN=1`）は、使われないローカルの COMMON に結合定数を書くので、PDF のスケールしか変わらない。
+- `helcomb.f` は最後に `DEG(0)`（宣言の範囲外）に書く。`GRNMOD` の `LAM` は `DSQRT` の後で `MAX(0,·)` を取るので、負の引数を防げない。
+- `common/ptfl.f` は qq̄ に b も足すが、`sigh_*E.f` 内の `PTFL` は d, u, s, c だけ（EG が使うのは後者）。
+- 古い `sigh_bwblv.f`, `sigh_blvblv.f` は、トップの不変質量が m_b + m_W より下まで動くので、`ITR=1` にすると `CORR` で 0 割りになる（既定は `ITR=0`）。
+
+## gfortran の警告（リンター、2026-10、#29）
+
+`gfortran -std=legacy -Wall -Wextra -fsyntax-only` を、自作のファイル（`standalone/*/{EG,main,tot,sigh}_*.f`、`standalone/common/` の自作ルーチン、`GrnEP_pro/GrnEP{thre,high}.f`）に掛けた。
+
+- **直したもの**：対象のファイル自身で宣言していて使っていない変数・PARAMETER（138 件）。修正前後で、スタンドアロン版 4 終状態の σ と LHE、Green 関数の表 4 枚がビット一致した（`scripts/check/regression.sh`、verified）。
+- **残したもの**：
+  - コメントアウトされた切り替え用の行（`*` または `c` で始まる行）で使う名前。例：`GrnEP_pro` の `RGAMT`, `GF`, `MW`, `MB`, `VTB`（LO の幅）、`ALFST`, `ALFSP`, `RQCD`（2LRGI の `SETVPR`）。
+  - 未使用の仮引数（呼び出しの形の一部）、未使用のラベル、実数の等号比較、実数から整数への変換（意図したもの）。
+  - include ファイル由来の警告（約 750 件）。`coupl_sm.inc`, `run.inc` は MadGraph 由来、`tblgrnep.inc` などは取り込んだルーチンが一部の名前しか使わないため。タブ文字（固定形式の gfortran 拡張）もそのまま。
 
 ## 範囲外（文書化のみ）
 
