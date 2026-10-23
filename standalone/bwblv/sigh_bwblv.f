@@ -1,4 +1,34 @@
+C=======================================================================
+C     sigh_bwblv.f : integrand for p p -> b W+ bbar mu- vm~ (on-shell
+C     W+, off-shell t, tbar and W-) with the bound-state correction.
+C     Older version, used by main_bwblv.f (d(sigma)/d(m_tt) at fixed
+C     m_tt, integrand INT12) and tot_bwblv.f (sigma integrated over
+C     m_tt, integrand INT13). Helicities and colours are summed inside
+C     the matrix elements. For q qbar the luminosity QQ of
+C     common/ptfl.f (quark from either beam) multiplies the matrix
+C     element with the quark along +z.
 C
+C     Integration variables, all in [0,1]:
+C       X(1), X(2)  : top and antitop virtualities (Breit-Wigner)
+C       X(3)        : W- virtuality (Breit-Wigner)
+C       X(4), X(11) : cos(theta), phi of the top (parton c.m. frame)
+C       X(5), X(10) : b in the top rest frame
+C       X(6), X(9)  : bbar in the antitop rest frame
+C       X(7), X(8)  : mu- in the W- rest frame
+C       X(12)       : rapidity of the t tbar system (LUMINO)
+C       X(13)       : m_tt (INT13 only)
+C=======================================================================
+C
+C-----------------------------------------------------------------------
+C     INT13(X): sigma [pb] integrand over X(1..13) (tot_bwblv.f).
+C     MTT = exp(L), L uniform in [ln MIN, ln MAX] (COMMON/INV/);
+C     Jacobian d(MTT)/dX(13) = (ln MAX - ln MIN) MTT. The power-law
+C     mapping is kept as comments.
+C     IDYN=1: mu_R = mu_F = MTT. GG and G set here belong to a local
+C     COMMON/C1/, not to COUPL_QCD (coupl_sm.inc) used by the matrix
+C     elements, so only the PDF scale changes.
+C     MTT is passed to INT12 through COMMON/V12/.
+C-----------------------------------------------------------------------
       DOUBLE PRECISION FUNCTION INT13 (X)
       IMPLICIT NONE
       INTEGER I,A
@@ -62,9 +92,16 @@ C.....
       RETURN
       END
 C
+C-----------------------------------------------------------------------
+C     INT12(X): d(sigma)/d(m_tt) [pb/GeV] at MTT = m_tt from
+C     COMMON/V12/ (set by main_bwblv.f or INT13), integrand over
+C     X(1..12). s = RS^2, tau = T = MTT^2/s; JAC = 1/s, with the
+C     factor 2*MTT in SIGHAT = d(tau)/d(MTT). IPART = 0 sums q qbar
+C     (JPART=1) and g g (JPART=2) explicitly; IPART = 1 or 2 selects
+C     one channel. MKHIST (main program) fills the histograms.
+C-----------------------------------------------------------------------
       DOUBLE PRECISION FUNCTION INT12 (X)
       IMPLICIT NONE
-      INTEGER I
       DOUBLE PRECISION X(12),Z
       DOUBLE PRECISION MT,MB,MW,GAMT,GAMW
       COMMON/MASS/MT,MB,MW,GAMT,GAMW
@@ -99,9 +136,23 @@ C
       END
 C
 C
+C-----------------------------------------------------------------------
+C     SIGHAT: partonic part. Input X(1..11), RSH = sqrt(s-hat) [GeV],
+C     IPART (1 q qbar, 2 g g), ICLR (g g: 0 singlet + octet,
+C     1 singlet, 2 octet). Output SIGH = |M|^2 x flux x phase space
+C     x 2*MTT, in pb/GeV.
+C     Momenta P(0:3,1..7) = g1, g2, b, W+, bbar, mu-, vm~ (parton c.m.
+C     frame, KINEMA5 in kinema5.f), stored in COMMON/MOM/.
+C     Breit-Wigner mapping of a virtuality s (mass m, width w):
+C       s = m^2 + m w tan(z), z uniform between the atan of the
+C       limits; JAC_i = (ds/dX)/(2 pi), i.e. it includes the 1/(2 pi)
+C       of ds/(2 pi).
+C     MWCUT (COMMON/CUT/, 5 GeV in the main programs) is the lower
+C     limit of the W- virtuality.
+C-----------------------------------------------------------------------
       SUBROUTINE SIGHAT (X,RSH,SIGH,IPART,ICLR,IBSS)
       IMPLICIT NONE
-      INTEGER I,IPART,ICLR,IBSS
+      INTEGER IPART,ICLR,IBSS
       DOUBLE PRECISION X(12),RSH,SIGH,MTT
       DOUBLE PRECISION COS1,PHI1,COS2,PHI2,COS3,PHI3,COS4,PHI4
       DOUBLE PRECISION LMD1,LMD2,LMD3,LMD4,LAM
@@ -119,13 +170,13 @@ C
       DOUBLE PRECISION P(0:3,7)
       COMMON/MOM/P
       DOUBLE PRECISION PI
-      DOUBLE COMPLEX CZERO
-      PARAMETER (PI=3.141593D0, CZERO=(0D0,0D0))
+      PARAMETER (PI=3.141593D0)
       INTEGER IFLAG
       ME2 = 0D0
       SIGH = 0D0
       SH = RSH**2
 C...  Resonance mass 1
+C     Top: MR1 in [m_b+m_W, sqrt(s-hat)-m_b-MWCUT] from X(1)
       MIN1 = MB + MW
       MAX1 = RSH - MB - MWCUT
       Z1MN = DATAN2 (MIN1**2-MT**2, MT*GAMT)
@@ -135,6 +186,8 @@ C...  Resonance mass 1
       JAC1 = (Z1MX-Z1MN) * ((MR1**2-MT**2)**2 + MT**2*GAMT**2)
      -     / (2D0*PI * MT*GAMT)
 C...  Resonance mass 2
+C     Antitop: MR2 in [m_b+MWCUT, sqrt(s-hat)-MR1] from X(2); a flat
+C     mapping is used if the upper limit MAX2 is below 10 GeV
       MIN2 = MB + MWCUT
       MAX2 = RSH - MR1
       IF (MAX2.GT.10D0) THEN
@@ -149,6 +202,7 @@ C...  Resonance mass 2
          JAC2 = MAX2-MIN2
       ENDIF
 C...  Resonance mass 3
+C     W-: MR3 in [MWCUT, MR2-m_b] from X(3); flat if MAX3 < 10 GeV
       MIN3 = MWCUT
       MAX3 = MR2 - MB
       IF (MAX3.GT.10D0) THEN
@@ -163,6 +217,8 @@ C...  Resonance mass 3
          JAC3 = MAX3-MIN3
       ENDIF
 C...
+C     Angles: cos(theta) = 2X-1, phi = 2 pi X; with dOmega/(4 pi) in
+C     the two-body phase space the Jacobian is 1.
       COS1 = 2D0*X(4) - 1D0     !
       COS2 = 2D0*X(5) - 1D0     !
       COS3 = 2D0*X(6) - 1D0     !
@@ -179,6 +235,8 @@ C...  Kinematical Cut
          IF (IFLAG.EQ.1) RETURN
       ENDIF
 C.....
+C     |M|^2, summed over helicities and colours and averaged over the
+C     initial state; q qbar with the quark along +z
       IF ( IPART.EQ.1 ) THEN
          CALL QQBWBLV (P,ME2)
       ELSEIF ( IPART.EQ.2 ) THEN
@@ -190,6 +248,10 @@ C.....
             CALL GGBWBLV (P,ME2,ICLR)
          ENDIF
       ENDIF
+C     Flux 1/(2 s-hat); two-body phase spaces lambda^(1/2)/(8 pi) for
+C     t tbar, t -> b W+, tbar -> bbar W-* and W-* -> mu- vm~ (LMD4 = 1
+C     for massless leptons). 2*MTT = d(s-hat)/d(MTT); 389429.57D3
+C     converts GeV^-2 to pb.
       JAC  = JAC1 * JAC2 * JAC3
       LMD1 = LAM (1D0,MR1**2/SH,   MR2**2/SH    )
       LMD2 = LAM (1D0,MB**2/MR1**2,MW**2 /MR1**2)
@@ -202,9 +264,16 @@ C.....
       RETURN
       END
 C
+C-----------------------------------------------------------------------
+C     LUMINO: X (= X(12)) is mapped linearly to the t tbar rapidity
+C     y in [ln(T)/2, -ln(T)/2]; x1 = sqrt(T) e^y, x2 = sqrt(T) e^-y,
+C     dx1 dx2 = d(tau) dy. LUM = luminosity x DY, with QQ (q qbar +
+C     qbar q, flavours d..b) for IPART=1 and GG for IPART=2 from
+C     common/ptfl.f, at mu_F. x1, x2 go to COMMON/XBJ/ and xbk.
+C-----------------------------------------------------------------------
       SUBROUTINE LUMINO (X,T,IPART,LUM)
       IMPLICIT NONE
-      INTEGER I,IPART
+      INTEGER IPART
       DOUBLE PRECISION X,T,LUM
       DOUBLE PRECISION YMIN,YMAX,DY,Y
       DOUBLE PRECISION X1,X2,QQ,GG,QG,GQ
@@ -237,6 +306,13 @@ C.....
       END
 C
 C
+C-----------------------------------------------------------------------
+C     KINECUT (ICUT=1). R2 (kin_functions.f) is Delta R squared in
+C     (eta, phi). RBL1: b and mu-, RBL2: bbar and mu-; computed in the
+C     parton c.m. frame (the boost PCM2HCM is commented out).
+C     Active cut: IFLAG = 1 (rejected) if RBL2 > 0.2, i.e. only events
+C     with the bbar close to the mu- are kept. ETL, ETB1, ETB2 unused.
+C-----------------------------------------------------------------------
       SUBROUTINE KINECUT (P,IFLAG)
       IMPLICIT NONE
       INTEGER IFLAG

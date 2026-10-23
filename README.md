@@ -65,7 +65,7 @@ The repository has both:
 | `scripts/lhe_masswindow.py` | fractions of LHE events inside resonance mass windows (cross-checks) |
 | `docs/versions-2010-2015.md` | how the two versions relate: switches, inputs, outputs, cross-checks |
 | `docs/REVIEW.md` | code review (2026-10): known issues and proposed fixes, mainly the Green-function tables |
-| `scripts/check/` | checks used for the cross-checks and the review (LO $t\bar t$, matrix elements, tables) |
+| `scripts/check/` | checks used for the cross-checks and the review (LO $t\bar t$, matrix elements, tables); `regression.sh` prints cross sections and checksums of the LHE files and tables, to compare two versions of the sources |
 | `docs/green-function-tables.md` | Green-function tables: how to make them, format, how the generators use them |
 | `docs/madgraph-status.md` | current status of MG5_aMC and MadGraph7 |
 | `docker/Dockerfile` | toolchain image: gfortran (also as `f77`), LHAPDF 6.5.5 + CTEQ6L1 |
