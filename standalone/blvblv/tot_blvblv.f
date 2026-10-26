@@ -1,13 +1,33 @@
+C=======================================================================
+C     tot_blvblv : total cross section [pb] of
+C       p p -> t t~ -> b mu+ nu_mu b~ mu- nu_mu~   (LHC 14 TeV),
+C     integrated with BASES over the full phase space including m_tt
+C     (integrand INT16 of sigh_blvblv.f; matrix elements
+C     me_ggblvblv.f, me_qqblvblv.f). Bound-state effects of
+C     arXiv:1007.0075 for IGRN>=1.
+C     A calculator without steering: the settings are fixed below
+C     (default: all subprocesses, IGRN=0, i.e. the Born cross
+C     section); no K factors and no event file.
+C
+C     Inputs: param_card_sm.dat, grnep{1,8}{thre,high}.tbl (IGRN>=1),
+C             LHAPDF set cteq6ll.LHpdf (CTEQ6L1).
+C     Outputs: stdout, fort.2  settings and SIGMA [pb]; fort.2 also
+C              the BASES summary and histograms (m_tt: 20, 21).
+C     Build: make PROC=blvblv (standalone/Makefile); run the program
+C     in a directory that holds the input files. Units: GeV, pb.
+C=======================================================================
       PROGRAM MAIN
       IMPLICIT NONE
-      INTEGER I
+C     COMMON blocks shared with sigh_blvblv.f: /MASS/ masses and
+C     widths [GeV], /ID/ IPART, ICLR, /SCL/ scales [GeV], /DYN/ IDYN,
+C     /INV/ m_tt range [GeV], /CUT/ cut, /THR/ (thr.inc) switches.
       DOUBLE PRECISION MT,MB,MW,GAMT,GAMW
       COMMON/MASS/MT,MB,MW,GAMT,GAMW
       DOUBLE PRECISION RS,SIGT,ERR
-      DOUBLE PRECISION PI,SQ2
-      PARAMETER (PI=3.141593D0,SQ2=1.41421356D0)
+      DOUBLE PRECISION PI
+      PARAMETER (PI=3.141593D0)
       INTEGER INF
-      DOUBLE PRECISION NF,ASQCD,AS0,GS,GF,RGWF,RGAMT
+      DOUBLE PRECISION NF,ASQCD,AS0,GS,GF, RGAMT
       EXTERNAL ASQCD, RGAMT
       INTEGER IPDF,IPORD,ISUB,IERR
       INTEGER IPRC,IEXP
@@ -33,11 +53,17 @@
       include 'parameter.inc'
       include 'run.inc'
 C.....
+C     Integrator: IBSS = 1 VEGAS, 2 BASES (note: not the numbering
+C     of EG_*.f). ISPR = 1 would also generate 1000 SPRING events
+C     per integration, used only for the SPRING histograms.
       IBSS  = 2                 ! 1:VEGAS, 2:BASES
       ISPR  = 0                 ! SPRING Event Generation 0:OFF, 1:ON
       WRITE (2,*) "IBSS, ISPR =", IBSS, ISPR
       WRITE (6,*) "IBSS, ISPR =", IBSS, ISPR
 C.....
+C     PDFs through LHAPDF: cteq6ll.LHpdf (CTEQ6L1, LO alpha_s).
+C     IPDF..IERR are only used by the old SETPDF (commented out).
+C     Collider: IPRC = 1 p p, 2 p p~; RS = sqrt(s) [GeV].
       IPDF  = 4                 ! 1:GRV98,2:Alekhin02,3:MRST2004NLO,4:CTEQ6
       IPORD = 1                 ! 1:LO, 2:NLO, 3:NNLO
       ISUB  = 0                 !
@@ -49,13 +75,25 @@ C.....
       IPRC  = 1                 ! 1:p-p, 2:p-pbar
       RS = 14D3                 ! LHC
 C...  'run.inc'
+C     beam energies [GeV] and beam types (1: proton) in run.inc
       ebeam(1) = rs/2D0
       ebeam(2) = rs/2D0
       lpp(1) = 1
       lpp(2) = 1
 C....
+C     IHEL (COMMON/HEL) is not read by the routines of this program;
+C     the matrix elements sum over all helicities.
       IHEL = 0
 C.....
+C     Physics switches (no topbs.nml steering in this program):
+C       IPART 0 sum of q q~ and g g, 1 q q~ only, 2 g g only
+C       ICLR  0 singlet + octet, 1 colour singlet, 2 colour octet
+C             (selects the g g colour state)
+C       IGRN  0 no bound-state correction, 1 OCP, 2 TAP (thr.inc)
+C       ITR, INR  see thr.inc (used for g g in GGTTRES, ggtt.f)
+C       IDYN  0 fixed scale mu = m_t, 1 mu_R = mu_F = m_tt
+C       ICUT  1 call KINECUT (sigh_blvblv.f; its cuts are commented out)
+C     No K factors are applied.
       IPART = 0                 ! 0:Sum, 1:QQ, 2:GG
       ICLR  = 0                 ! 0:Sum, 1:Singlet, 2:Octet
       IGRN  = 0                 ! 0:No binding, 1:OCP,2:TAP
@@ -68,6 +106,7 @@ C.....
       WRITE (6,*) "IPART,ICLR,IGRN,IDYN,ICUT =",
      -     IPART,ICLR,IGRN,IDYN,ICUT
 C.....
+C     Masses and widths [GeV] from param_card_sm.dat (SETPARA)
       call setpara ('param_card_sm.dat',.true.)
       MT = TMASS
       MB = BMASS
@@ -77,10 +116,13 @@ C.....
       GAMT = TWIDTH
       GAMW = WWIDTH
 C.....
+C     Scales [GeV]: mu_R = mu_F = m_t; MUB = 20 GeV is the scale
+C     mu_B of the binding (Coulomb) alpha_s.
       MUR = MT
       MUF = MUR
       MUB = 20D0
 C.....
+C     alpha_s(mu_R) from the PDF set (5 flavours)
       INF = 5
       NF = DBLE (INF)
       AS0 = ASQCD (MUR,INF)
@@ -88,20 +130,29 @@ C.....
          WRITE (2,*) "MUR, ASR =", MUR, AS0
          WRITE (6,*) "MUR, ASR =", MUR, AS0
       ENDIF
+C     alpha_s(mu_B) (COMMON/BOHR, not read by any other routine);
+C     g_s goes into the HELAS couplings GG, G.
       ASB = ASQCD (MUB,INF)
       GS = DSQRT (4D0*PI*AS0)
       GG(1) = DCMPLX (GS,0D0)
       GG(2) = GG(1)
       G = -GS
 C.....
+C     Gamma_t and Gamma_W from the card (RGAMT commented out)
       GF = gfermi
 *      GAMT = RGAMT (MT,MW,GF,0D0,MB)
       WRITE (2,*) "GAM_T, GAM_W =", GAMT, GAMW
       WRITE (6,*) "GAM_T, GAM_W =", GAMT, GAMW
 *      TWIDTH = GAMT
 C
+C     Integration variables (INT16): X(1)-X(15) as in INT15
+C     (virtualities, decay angles, rapidity), X(16) m_tt
+C     (logarithmic mapping between MIN and MAX).
       NDIM = 16
 C
+C     MWCUT [GeV]: lower limit of the W virtualities; the b W
+C     virtualities start at m_b + MWCUT. m_tt range [GeV]: from
+C     2 m_b + 2 MWCUT to sqrt(s).
       MWCUT = 5D0
       MIN = 2D0*MB + 2D0*MWCUT
       MAX = RS
@@ -111,10 +162,12 @@ C
       WRITE (2,*) "MIN, MAX =", MIN, MAX
       WRITE (6,*) "MIN, MAX =", MIN, MAX
 C
+C     BASES initialisation and set-up (USERIN)
       IF ( IBSS.EQ.2 ) THEN
          CALL BSINIT
          CALL USERIN
       ENDIF
+C     integrate; SIGT and ERR in pb
       CALL SIGBWBLV (RS,SIGT,ERR,IBSS,ISPR,NDIM)
       WRITE (2,*) "SIGMA =", SIGT, " (pb) +-", ERR
       WRITE (6,*) "SIGMA =", SIGT, " (pb) +-", ERR
@@ -122,6 +175,15 @@ C
       END
 C
 C
+C-----------------------------------------------------------------------
+C     SIGBWBLV: cross section [pb] integrated over m_tt.
+C       RS   : sqrt(s) [GeV] (input)
+C       SIG, ERR : result and its error [pb] (output)
+C       IBSS : 1 VEGAS, 2 BASES; ISPR : 1 also run SPRING
+C       IVAL : number of integration variables (NDIM)
+C     Integrand INT16 (sigh_blvblv.f) through COMMON/V16/;
+C     COMMON/RESULT/ receives the BASES/VEGAS result S1, S2.
+C-----------------------------------------------------------------------
       SUBROUTINE SIGBWBLV (RS,SIG,ERR,IBSS,ISPR,IVAL)
       IMPLICIT NONE
       INTEGER I,IVAL,JVAL
@@ -137,6 +199,7 @@ C
       include 'parameter.inc'
       INTEGER IH
       COMMON/HST/IH
+C     MKHIST fills histograms only when called from INT16
       IH = 16
       SIG = 0D0
       ERR = 0D0
@@ -144,6 +207,7 @@ C
       JVAL = IVAL
       JBSS = IBSS
       NVP = 25000
+C     VEGAS (intvegas.f) or BASES; S1 = sigma, S2 = error [pb]
       IF (IBSS.EQ.1) THEN
          CALL VEGAS (INT16,1D-4,IVAL,NVP,10,0,0)
       ELSEIF (IBSS.EQ.2) THEN
@@ -167,6 +231,13 @@ C
       END
 C
 C
+C-----------------------------------------------------------------------
+C     USERIN: BASES set-up, called once after BSINIT. All NDIM
+C     variables in [0,1], grid-adapted; NCALL points per iteration,
+C     ITMX1/ITMX2 iterations, ACC1/ACC2 target accuracies [%].
+C     Histograms 1-16: the integration variables X(i); 20, 21:
+C     m_tt [GeV] in two ranges.
+C-----------------------------------------------------------------------
       subroutine userin
       implicit none
       include 'parameter.inc'
@@ -200,6 +271,13 @@ C
       return
       end
 C
+C-----------------------------------------------------------------------
+C     MKHIST: fill the histograms of the integration variables for
+C     one point (only for IBSS=2 and calls from the top-level
+C     integrand, IS = IH = 16). SIG is the weight [pb/GeV or pb].
+C     COMMON/MOM/ P in the parton c.m. frame: 1, 2 incoming,
+C     3 b, 4 mu+, 5 nu_mu, 6 b~, 7 mu-, 8 nu_mu~ (not used here).
+C-----------------------------------------------------------------------
       SUBROUTINE MKHIST (IS,IVAL,IBSS,SIG,X)
       IMPLICIT NONE
       INTEGER I,IS,IVAL,IBSS
@@ -211,10 +289,8 @@ C
       DOUBLE PRECISION P(0:3,8),PH(0:3,8)
       COMMON/MOM/P
       DOUBLE PRECISION PT(0:3),PTB(0:3)
-      DOUBLE PRECISION PTL,PTM
       DOUBLE PRECISION MTT
       COMMON/TT/MTT
-      DOUBLE PRECISION RBL1,RBL2,RLV
       DOUBLE PRECISION R2
       EXTERNAL R2
       INTEGER IH

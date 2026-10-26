@@ -1,3 +1,31 @@
+C=======================================================================
+C     Reading and interpolation of the Green-function tables
+C     (docs/green-function-tables.md). The correction factor
+C     Gamma(E,p) = G(E,p)/G0(E,p) is tabulated, for each colour state,
+C     on two grids whose constants are in tblgrnep.inc:
+C       threshold   grnep{1,8}thre.tbl : E = EMIN1..EMAX1 = -50..30
+C                   GeV, NE1+1 = 801 points, uniform; p = PMIN1..PMAX1
+C                   = 0..300 GeV, NP1+1 = 301 points, uniform
+C       high energy grnep{1,8}high.tbl : E = EMIN2..EMAX2 = 30..830
+C                   GeV, NE2+1 = 401 points, uniform; NP2+1 = 102
+C                   p points, geometric around p0 = sqrt(m_t E) (PP)
+C     (1 = colour singlet, 8 = octet). File names: filedata.inc; the
+C     tables are read from the run directory.
+C
+C     Table format (list-directed):
+C       line 1 : m_t, Gamma_t, alpha_s(mu_B)
+C       line 2 : NE, NP (numbers of intervals)
+C       line 3 : E_min, E_max [GeV]
+C       line 4 : p_min, p_max [GeV] (thre) or the ratio RR (high)
+C       then NE+1 blocks (E index outer) of NP+1 lines "Re Im"
+C       (p index inner), each block followed by a separator line.
+C
+C     Entry point: READGRN(GAMMA,E,P,ICLR), called by GRNMOD.
+C=======================================================================
+C
+C     READHEAD: reads only line 1 of the threshold table of colour
+C     ICLR into COMMON/GrnPAR/. Not called by the stand-alone
+C     generators (READTABLE reads the same values).
       SUBROUTINE READHEAD (ICLR)
       IMPLICIT NONE
       INTEGER IOF,ICLR
@@ -18,14 +46,19 @@
       RETURN
       END
 C
+C     READGRN: Gamma(E,P) for colour ICLR (1 singlet, 2 octet).
+C       E, P [GeV] as defined in GRNMOD; GAMMA complex, dimensionless.
+C     On the first call for a colour both tables of that colour are
+C     read (READTABLE); ITBL(ICLR) = 33 in COMMON/GrnCHK/ marks them
+C     as loaded. m_t, Gamma_t and alpha_s(mu_B) of the table go to
+C     COMMON/GrnPAR/ and are not compared with the generator's values
+C     (docs/REVIEW.md, P3).
       SUBROUTINE READGRN (GAMMA,E,P,ICLR)
       IMPLICIT NONE
       INCLUDE 'tblgrnep.inc'
-      INTEGER I,J,K,ICLR
-      DOUBLE COMPLEX CZERO,CONE,CIMG
-      PARAMETER (CZERO=(0D0,0D0),CONE=(1D0,0D0), CIMG=(0D0,1D0))
+      INTEGER   ICLR
       DOUBLE PRECISION E,P
-      INTEGER IE,IP,EINT,PINT
+      INTEGER  EINT,PINT
       DOUBLE PRECISION EE,PP
       EXTERNAL EE,PP,EINT,PINT
       DOUBLE COMPLEX GRN,GAMMA
@@ -40,6 +73,12 @@ C
       RETURN
       END
 C
+C     READTABLE: reads grnep{1,8}thre.tbl into GRNEPT(0:NE1,0:NP1,ICLR)
+C     and grnep{1,8}high.tbl into GRNEPH(0:NE2,0:NP2,ICLR), both in
+C     COMMON/GrnTBL/. Stops if the numbers of intervals (and, for the
+C     high-energy table, RR) differ from tblgrnep.inc. The E and p
+C     ranges of the header (EMN, EMX, PMN, PMX) are read but not
+C     checked; the ranges in tblgrnep.inc are used (REVIEW.md, P14).
       SUBROUTINE READTABLE (ICLR)
       IMPLICIT NONE
       INCLUDE 'tblgrnep.inc'
@@ -75,6 +114,7 @@ C
                READ (IOF,*) RE,IM
                GRNEPT(IE,IP,ICLR) = DCMPLX(RE,IM)
             ENDDO
+C     skip the separator line after each E block
             READ(IOF,*)
          ENDDO
       ELSE
@@ -85,6 +125,7 @@ C
       ENDIF
       CLOSE (IOF)
 C
+C     High-energy table; its 4th header line is the ratio RR
       IF (ICLR.EQ.1) THEN
          WRITE (6,*) "   Open file : ", H1
          OPEN (IOF,FILE=H1)
@@ -118,6 +159,9 @@ C
       RETURN
       END
 C
+C     READGRNTBL: table entry GREEN at grid indices (IE,IP) for colour
+C     ICLR; IT = 1 threshold table, IT = 2 high-energy table (IT is
+C     declared in tblgrnep.inc).
       SUBROUTINE READGRNTBL (GREEN,IE,IP,ICLR,IT)
       IMPLICIT NONE
       INCLUDE 'tblgrnep.inc'
@@ -133,6 +177,34 @@ C
       RETURN
       END
 C
+C     HOKAN2D: Gamma at (EI,PI) [GeV] by bilinear interpolation.
+C     (PI is the momentum p here, not pi.) Result in GRN.
+C
+C     1. Table and E interval IE:
+C        EI <  EMAX1 (30 GeV) : threshold table, IT = 1
+C           EI < EMIN1 (-50 GeV): IE = 0, i.e. linear extrapolation
+C           from the first interval (the 2010 code returns Gamma = 1
+C           there; docs/REVIEW.md, P10)
+C        EI >= EMIN2 (30 GeV) : high-energy table, IT = 2
+C           EI > EMAX2 (830 GeV, sqrt(s-hat) > ~833 GeV): IE = NE2-1,
+C           i.e. linear extrapolation from the last interval. Known
+C           issue P1 (docs/REVIEW.md): the 2010 code returns Gamma = 1
+C           there, and the extrapolated values are not physical (for
+C           the singlet at E = 2000 GeV, Gamma = 0.62 - 0.25i). The
+C           commented-out lines would freeze E at EMAX2 instead.
+C        For IT = 2 the p grid moves with E: POS = p0 = sqrt(m_t E)
+C        (COMMON/OS/, m_t from the table header) is set here and used
+C        by PP and PINT.
+C     2. p interval IP:
+C        PI > PMAX : P is clamped to PMAX
+C        PI < PMIN : IP = 0, linear extrapolation (only IT = 2, where
+C                    PMIN = PP(0) > 0)
+C     3. Interpolation. If E and/or P are on grid points (within
+C        1D-4 GeV) the table value or a one-dimensional interpolation
+C        is used; otherwise linear in p at IE and at IE+1, then
+C        linear in E. For IT = 2 both E rows are taken at the same
+C        index IP, i.e. the interpolation in E is done at fixed p/p0
+C        (PP/p0 depends only on IP).
       SUBROUTINE HOKAN2D (EI,PI,GRN,ICLR)
       IMPLICIT NONE
       INCLUDE 'tblgrnep.inc'
@@ -145,13 +217,13 @@ C
       EXTERNAL EINT,PINT,EE,PP
       DOUBLE PRECISION E0,E1,P0,P1
       DOUBLE COMPLEX G0,G1,G00,G01,G10,G11
-      DOUBLE COMPLEX CZERO,CONE,CIMG
-      PARAMETER (CZERO=(0D0,0D0),CONE=(1D0,0D0), CIMG=(0D0,1D0))
       DOUBLE PRECISION MT,GAMT,ASB
       COMMON/GrnPAR/MT,GAMT,ASB
+C     --- 1. table and E interval
       GRN = DCMPLX(1D0,0D0)
       IF (EI.LT.EMAX1) THEN
          IT = 1
+C     below the threshold table: extrapolate from the first interval
          IF (EI.LT.EMIN1) THEN
             IE = 0
             E = EI
@@ -166,6 +238,8 @@ C
          PMAX = PMAX1
       ELSEIF (EI.GE.EMIN2) THEN
          IT = 2
+C     above the high-energy table: extrapolate from the last interval
+C     (REVIEW.md, P1)
          IF (EI.GT.EMAX2) THEN
 C...  extrapolation
             IE = NE2-1
@@ -180,15 +254,18 @@ C...  stop at the maximum of grid
             WRITE (6,*) "ERROR; IT = 2"
             STOP
          ENDIF
+C     on-shell momentum p0 [GeV], centre of the IT = 2 p grid
          POS = DSQRT(MT*E)
          PMIN = PP (0,IT)
          PMAX = PP (NP2,IT)
+C     reached only if EI is not a number (EMAX1 = EMIN2)
       ELSE
          WRITE (6,*) "IT"
          WRITE(6,*) EI,EMIN1,EMAX1,EMIN2,EMAX2
          STOP
       ENDIF
 C
+C     --- 2. p interval
       IF (PI.GT.PMAX) THEN
 C...  extrapolation to outside grid
 *         P = PI
@@ -204,6 +281,8 @@ C...  stop at the maxmum
          IP = PINT(P,IT)
       ENDIF
 C
+C     --- 3. interpolation: on a grid point / linear in E / linear in
+C     p / bilinear (p first, then E)
       IF (ABS(EE(IE,IT)-E).LE.1D-4 .AND. ABS(PP(IP,IT)-P).LE.1D-4) THEN
          CALL READGRNTBL (GRN,IE,IP,ICLR,IT)
       ELSEIF ( ABS(PP(IP,IT)-P) .LE. 1D-4 ) THEN
@@ -242,6 +321,7 @@ C
       RETURN
       END
 C
+C     EE: E [GeV] of grid point IE (uniform grid) of table IT
       DOUBLE PRECISION FUNCTION EE (IE,IT)
       IMPLICIT NONE
       INCLUDE 'tblgrnep.inc'
@@ -259,6 +339,7 @@ C
       RETURN
       END
 C
+C     EINT: index of the E interval [EE(IE),EE(IE+1)] containing E
       INTEGER FUNCTION EINT (E,IT)
       IMPLICIT NONE
       INCLUDE 'tblgrnep.inc'
@@ -276,6 +357,15 @@ C
       RETURN
       END
 C
+C     PP: p [GeV] of grid point IP of table IT.
+C       IT = 1 : uniform, PMIN1..PMAX1
+C       IT = 2 : around p0 = POS (set by HOKAN2D), M = (NP2-1)/2 = 50,
+C         IP <= M : PP = p0 (1-RR^(IP+1))/(1-RR^(M+1)), so PP(M) = p0
+C                   and the spacing shrinks towards p0 (RR = 0.9)
+C         IP >  M : PP = p0 + A RR^M (1-R1^k)/(1-R1), k = IP-M+1,
+C                   R1 = 1/RR, A = (1-RR)/(1-RR^M) p0; the spacing
+C                   grows away from p0
+C       PP/p0 depends only on IP.
       DOUBLE PRECISION FUNCTION PP (IP,IT)
       IMPLICIT NONE
       INTEGER IP,M
@@ -298,6 +388,11 @@ C
       RETURN
       END
 C
+C     PINT: index IP of the p interval [PP(IP),PP(IP+1)] containing P,
+C     obtained by inverting PP. Known issue P7 (docs/REVIEW.md): for
+C     IT = 2 and p0 < P < p0 + A RR^M (k in (0,1) in the formula of
+C     PP) the branch P > POS returns M-1 instead of M, so that HOKAN2D
+C     extrapolates from the interval below p0 over a short distance.
       INTEGER FUNCTION PINT (P,IT)
       IMPLICIT NONE
       DOUBLE PRECISION P,A,R1

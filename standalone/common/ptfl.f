@@ -2,11 +2,27 @@ C     PTFL : RETURN THE PRODUCT OF TWO PDFS; F(X1) * F(X2)
 C     IPRC : 1:P-P, 2:P-PBAR
 C     PDF MUST BE DETERMINED PREVIOUSELY (pdfport)
 C
+C     This version is linked with the older programs main_* and tot_*
+C     in bwblv/ and blvblv/ (sigh_bwblv.f, sigh_blvblv.f). The EG_*
+C     generators use the PTFL inside their sigh_*E.f, which keeps q qbar
+C     (quark from beam 1) and qbar q (quark from beam 2) apart and
+C     omits b quarks.
+C
+C     Input : X1, X2 momentum fractions of beams 1 and 2; MU2 =
+C             factorisation scale squared [GeV^2]; IPRC 1 pp, 2 p pbar
+C     Output: products of parton densities f_i(X1) f_j(X2)
+C       GG : g g
+C       QG : (sum of quarks and antiquarks d..b)(X1) * g(X2)
+C       GQ : g(X1) * (sum of quarks and antiquarks d..b)(X2)
+C       QQ : sum over q = d,u,s,c,b of q qbar + qbar q (quark from
+C            either beam); for p pbar the antiproton density of qbar
+C            is the proton density of q
+C     CALLPDF returns x f(x), hence the division by X1 X2.
       SUBROUTINE PTFL (X1,X2,QQ,GG,QG,GQ,MU2,IPRC)
       IMPLICIT NONE
       DOUBLE PRECISION X1,X2,QQ,GG,QG,GQ,MU2
       DOUBLE PRECISION MU
-      INTEGER IPRC,IORD,IEXP
+      INTEGER IPRC
       DOUBLE PRECISION PDF1(-6:6), PDF2(-6:6)
       EXTERNAL CALLPDF
       INTEGER IPDF,IPORD,ISUB,IERR
